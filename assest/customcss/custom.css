@@ -1,0 +1,44 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(sansation_light.woff);
+ }
+ 
+ * {
+    font-family: myFirstFont;
+    font-weight: bold;
+  }
+    #grad {
+   background-image: linear-gradient(to right, lightpink,lightBlue);
+ }
+ .error-msg{
+ 
+   background:#ddc2e0;
+   color:#0f0311;
+   border:1px solid #3d10a7;
+ }
+ 
+ .success-msg{
+ 
+   background: #0905e700;
+   color: #0c0e0d;
+   border: 1px solid #5c922f;
+ }
+ 
+ #response{
+ 
+   width: 100%;
+   height:  7%;
+   margin: 10px auto;
+   border-radius: 1px 10px 1px 10px ;
+   padding: 10px; 
+   position: relative;
+   
+ }
+ #btn_id{
+ 
+   border-radius: 0px;
+ }
+ #btn_id2{
+ 
+   border-radius: 0px;
+ }
