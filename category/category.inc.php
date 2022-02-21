@@ -8,9 +8,9 @@
 ?>
 
 <div class="container">
-<table class="table table-hover table-bordered mt-4">
+<table class="table table-hover table-bordered mt-4 btn-info shadow">
     <thead>
-        <tr>
+        <tr class="text-center">
         <th scope="col">Sr No</th>
         <th scope="col">Category Name</th>
         <th scope="col">Status</th>
@@ -27,10 +27,18 @@
                 while($result = $runQry->fetch_assoc()){
                     $data = $result;
                     ?>
-                    <tr>
+                    <tr class="text-center">
                     <td><?php echo $sr; ?></td>
                     <td><?php echo $data['cate_name'];?></td>
-                    <td><?php echo $data['status'];?></td>
+                    <td>
+                        <?php  if($data['status'] == 1){
+                           echo "<a href = '?type = status&operation = deactive&id = ".$data['cate_id']."'>Active</a>";
+
+                        }else{
+                            echo "<a href = '?type = status&operation = active&id = ".$data['cate_id']."'>Deactive</a>";
+                           
+                        }?>
+                </td>
                 </tr>
                 <?php 
                 $sr ++;   
