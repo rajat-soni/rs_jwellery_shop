@@ -72,13 +72,13 @@
                     <td><?php echo $data['cate_name'];?></td>
                     <td>
                         <?php  if($data['status'] == 1){
-                           echo"<a href='?type=status&operation=deactive&cate_id=".$data['cate_id']."'>Active</a> ";
+                           echo"<a href='?type=status&operation=deactive&cate_id=".$data['cate_id']." ' class='btn btn-md bg-success text-light'>Active</a> ";
 
                         }else{
-                            echo "<a href='?type=status&operation=active&cate_id=".$data['cate_id']."'>Deactive</a>&nbsp;" ; //never leave the space between from href  to $data['cate_id'] and active id name same as database id   
+                            echo "<a href='?type=status&operation=active&cate_id=".$data['cate_id']."' class='btn btn-md bg-warning text-light'>Deactive</a>&nbsp;" ; //never leave the space between from href  to $data['cate_id'] and active id name same as database id   
                         }
-                        echo "<a href='?type=delete&cate_id=".$data['cate_id']."'>Delete</a> &nbsp;";
-                        echo "<a href='?type=edit&cate_id=".$data['cate_id']."'>Edit</a>";
+                        echo "<a href='?type=delete&cate_id=".$data['cate_id']."' class='btn btn-md bg-danger text-light'>Delete</a> &nbsp;";
+                        echo "<a href='?type=edit&cate_id=".$data['cate_id']."' class='btn btn-md bg-primary text-light'>Edit</a>";
                         ?>
                     </td>
                     </tr>
