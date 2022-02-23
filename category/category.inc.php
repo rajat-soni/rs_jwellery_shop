@@ -5,7 +5,7 @@
     
     //include '../function.inc/function.inc.php';
     
-    if(isset($_GET['type'])){
+    if(isset($_GET['type'])){  // active and deactive functionality //
         
         $type = $conn->real_escape_string($_GET['type']);
         if($type == 'status'){
@@ -27,18 +27,12 @@
             $exDelSql = $conn->query($delSqlQry);    
         }
 
-        // if($type == 'edit'){
-           
-        //     $edit_id = $conn->real_escape_string($_GET['cate_id']);
-        //     $editSqlQry = " UPDATE `category_tbl` SET `cate_name`= '$status' WHERE `cate_id` = ".$_GET['cate_id']." ";
-        //     $exEditSql = $conn->query($Sql);     ;
-              
-        // }
+        
       
       
      
     }else{ 
-        echo "data not get";
+        echo "";
     }
     
     $sqlQry = "select * from `category_tbl`";
@@ -46,6 +40,7 @@
 ?>
 
 <div class="container">
+<a href="addCate.inc.php" class="btn btn-info mt-4 mb-2" role="button">Add Category</a>
 <table class="table table-hover table-bordered mt-4 btn-light shadow">
     <thead>
         <tr class="text-center btn-info">
@@ -75,10 +70,10 @@
                            echo"<a href='?type=status&operation=deactive&cate_id=".$data['cate_id']." ' class='btn btn-md bg-success text-light'>Active</a> ";
 
                         }else{
-                            echo "<a href='?type=status&operation=active&cate_id=".$data['cate_id']."' class='btn btn-md bg-warning text-light'>Deactive</a>&nbsp;" ; //never leave the space between from href  to $data['cate_id'] and active id name same as database id   
+                            echo "<a href='?type=status&operation=active&cate_id=".$data['cate_id']."' class='btn btn-md bg-warning text-light'>Deactive</a>&nbsp;" ; //never leave the space between from href  to $data['cate_id'] and active id name same as database id  in anchor tag. //
                         }
                         echo "<a href='?type=delete&cate_id=".$data['cate_id']."' class='btn btn-md bg-danger text-light'>Delete</a> &nbsp;";
-                        echo "<a href='?type=edit&cate_id=".$data['cate_id']."' class='btn btn-md bg-primary text-light'>Edit</a>";
+                        echo "<a href='editCate.inc.php?cate_id=".$data['cate_id']."' class='btn btn-md bg-primary text-light'>Edit</a>";
                         ?>
                     </td>
                     </tr>

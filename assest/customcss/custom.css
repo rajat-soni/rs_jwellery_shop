@@ -8,7 +8,7 @@
     font-weight: bold;
   }
     #grad {
-   background-image: linear-gradient(to right, lightpink,lightBlue);
+   background-image: linear-gradient(to left, lightblue,lightpink);
  }
  .error-msg{
  
