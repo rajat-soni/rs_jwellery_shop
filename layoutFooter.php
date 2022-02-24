@@ -9,6 +9,7 @@
 
 <script src = "../assest/customjs/login.js"></script>
 <script src = "../assest/customjs/addCategory.js"></script>
+<script src = "../assest/customjs/contactForm.js"></script>
 </body>
 
 </html>

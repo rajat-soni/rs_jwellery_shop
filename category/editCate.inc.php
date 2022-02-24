@@ -9,6 +9,8 @@ include '../configDb/config.php';
     $row[]= array();
      $sqlQry = "select * from `category_tbl` where `cate_id` = '$cate_id'";
     $runQry = $conn->query($sqlQry);
+     $check = $runQry->num_rows > 0;
+     if($check){
         while($result = $runQry->fetch_assoc()){
             $row = $result;
         ?>
@@ -35,10 +37,16 @@ include '../configDb/config.php';
 
             <p class="pl-4"><input type="submit" value= "submit" name="submit"></p>
         </div>
-       
-            <?php } }?>
-       
+          
     </form>
+            <?php }?>
+            
+    
+    <?php 
+    }else{ 
+        header("location:category.inc.php");
+    }?>
+    <?php }?>
 </div>
  <?php include '../layoutFooter.php';
 
