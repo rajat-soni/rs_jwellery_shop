@@ -1,6 +1,6 @@
 <?php 
 
-    include '../layoutHeader.php';
+    include '../layoutModule/indexHeader.inc.php';
     include '../configDb/config.php';
     
     //include '../function.inc/function.inc.php';
@@ -93,6 +93,6 @@
         </div>
 
 <?php
-include '../layoutFooter.php';
+include '../layoutModule/indexFooter.inc.php';
 
 ?>

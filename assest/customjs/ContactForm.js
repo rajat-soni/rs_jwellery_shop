@@ -17,7 +17,7 @@ function contactForm(){
                 success : function(response){
                  if(response == 1){
                      alert("data Successfully Submitted");
-                     window.location = "indexContact.inc.php";
+                     window.location = "../contact_us.inc/indexContact.inc.php";
 
                  }else{
                      alert("data not get in ajax");

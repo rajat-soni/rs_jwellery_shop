@@ -1,9 +1,8 @@
 <?php
 
-include '../layoutHeader.php'; 
+include '../layoutModule/indexHeader.inc.php'; ?>
 
-include '../configDb/config.php';
-?>
+
 <div class="container mt-4 " id="wraperDiv">
     <!-- <form action="/action_page.php"> -->
         <div class="row mt-4">
@@ -26,7 +25,6 @@ include '../configDb/config.php';
                     
                 </select>
             </div>
-            
 
             <p class="pl-4"><input type="submit" class="btn btn-md" name ="submit" onclick = "addCate()"></p>
         </div>
@@ -35,6 +33,4 @@ include '../configDb/config.php';
        
     </form>
 </div>
- <?php include '../layoutFooter.php';
-
-?>
+ <?php include '../layoutModule/indexFooter.inc.php';

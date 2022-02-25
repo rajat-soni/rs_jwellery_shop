@@ -1,6 +1,6 @@
 <?php
 
-include '../layoutHeader.php'; 
+include '../layoutModule/indexHeader.inc.php'; 
 include '../configDb/config.php';
 
   if(isset($_GET['cate_id']) && $_GET['cate_id'] != ""){
@@ -9,15 +9,13 @@ include '../configDb/config.php';
     $row[]= array();
      $sqlQry = "select * from `category_tbl` where `cate_id` = '$cate_id'";
     $runQry = $conn->query($sqlQry);
-     $check = $runQry->num_rows > 0;
-     if($check){
         while($result = $runQry->fetch_assoc()){
             $row = $result;
         ?>
 <div class="container mt-4 " id="wraperDiv">
     <form action="editCateData.inc.php" method="POST"> 
-        <div class="row mt-4">
-            <div class="col-25 pl-4">
+        <div class="row mt-4 p-2">
+            <div class="col-25 ">
                 <label for="fname">Category Name</label>
             </div>
             <div class="col-75">
@@ -25,29 +23,22 @@ include '../configDb/config.php';
                 <input type="text" id="cate_name" name="cate_name" value="<?php echo $row['cate_name'];?>">
             </div>
         </div>
-        <div class="row">
-            <div class="col-25 pl-4">
+        <div class="row p-2">
+            <div class="col-25 ">
                 <label for="country">Status</label>
             </div>
             <div class="col-75">
             <input type="text" id="status" name="status" value="<?php echo $row['status'];?>">
                     
                 </select>
+                <p class="p-2"><input type="submit" value= "submit" name="submit"></p>
             </div>
 
-            <p class="pl-4"><input type="submit" value= "submit" name="submit"></p>
-        </div>
-          
-    </form>
-            <?php }?>
             
-    
-    <?php 
-    }else{ 
-        header("location:category.inc.php");
-    }?>
-    <?php }?>
+        </div>
+       
+            <?php } }?>
+       
+    </form>
 </div>
- <?php include '../layoutFooter.php';
-
-?>
+<?php include '../layoutModule/indexFooter.inc.php'; ?>

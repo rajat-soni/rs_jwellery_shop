@@ -6,6 +6,7 @@
  * {
     font-family: myFirstFont;
     font-weight: bold;
+    font-size: 17px;
   }
     #grad {
    background-image: linear-gradient(to left, lightblue,lightpink);

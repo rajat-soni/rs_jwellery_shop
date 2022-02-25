@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="../assest/customcss/custom.css">
 <link rel="stylesheet" href="../assest/customcss/addForm.css">
 <link rel="stylesheet" href="../assest/customcss/contactForm.css">
+<link rel="stylesheet" href="../assest/customcss/slid.css">
 
 
 
