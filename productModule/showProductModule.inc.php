@@ -83,7 +83,7 @@ if(isset($_GET['type'])){  // active and deactive functionality //
             echo "<a href='?type=status&operation=active&product_id=".$response['product_id']."' class='btn btn-sm bg-warning text-light'>Deactive</a>&nbsp;" ; //never leave the space between from href  to $data['cate_id'] and active id name same as database id  in anchor tag. //
         }
         echo "<a href='?type=delete&product_id=".$response['product_id']."' class='btn btn-sm bg-danger text-light'>Delete</a> &nbsp;";
-        echo "<a href='editCate.inc.php?product_id=".$response['product_id']."' class='btn btn-sm bg-primary text-light'>Edit</a>";
+        echo "<a href='editProduct.inc.php?product_id=".$response['product_id']."' class='btn btn-sm bg-primary text-light'>Edit</a>";
         ?>
     
     </td>

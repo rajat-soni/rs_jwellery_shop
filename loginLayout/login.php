@@ -1,6 +1,6 @@
 
 <?php include "../layoutModule/indexHeader.inc.php"; ?>
-	<div  class="container-fluid">
+	<div  class="container">
 	 
 		<div class="container mt-4">
 			<div class="row">

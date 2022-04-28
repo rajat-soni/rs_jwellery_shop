@@ -2,10 +2,10 @@
 
 
 <div class="container ">
-    <div class="row mt-4   bg-light" ">
+    <div class="row mt-4   bg-light" >
    
-          <div class="col-md-5" style="margin-top: -1px; margin-left:-15px;" >
-          <img src="../assest/imgfolder/contactImg.jpg" style="height:100%; width:100%; background-size:contain;"  alt="Avatar Logo"/>
+          <div class="col-md-5" style="margin-top: -1px; margin-left:-12px;" >
+          <img src="../assest/imgfolder/contactImg.jpg" style="height:100%; width:98%; background-size:contain;"  alt="Avatar Logo"/>
           </div>
               <div class="col-md-7 bg- mt-4 mb-4 p-4">
                   <div class="row p-2">

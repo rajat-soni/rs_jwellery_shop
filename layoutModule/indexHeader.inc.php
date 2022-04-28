@@ -69,7 +69,7 @@
             <li class="nav-item active">
               <a class="nav-link" href="#">Logout <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
             <a class="navbar-brand pl-5 pt-0" href="#">
               <img src="../assest/imgfolder/adminImg.png" alt="Avatar Logo" style="width:30px;" class="rounded-pill"> 
             </a>
@@ -83,7 +83,7 @@
                 <a class="dropdown-item" href="#">Another action</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Something else here</a>
-              </div> -
+              </div> - -->
            
           </ul>
         </div>
