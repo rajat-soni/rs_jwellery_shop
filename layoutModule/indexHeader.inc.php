@@ -10,6 +10,8 @@
 
   <title>Rs Jweller's DashBord</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/spacelab/bootstrap.min.css" integrity="sha384-F1AY0h4TrtJ8OCUQYOzhcFzUTxSOxuaaJ4BeagvyQL8N9mE4hrXjdDsNx249NpEc" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
   <link rel="stylesheet" href="../assest/customcss/custom.css">
   <!-- Bootstrap core CSS -->
 
@@ -29,14 +31,23 @@
     <a class="navbar-brand pl-5 pt-3" href="#">
       <img src="../assest/imgfolder/adminImg.png" alt="Avatar Logo" style="width:50px;" class="rounded-pill"> 
     </a>
-      <div class="list-group list-group-flush pl-2">
+    
+    
+      <div class="list-group list-group-flush pl-2 pt-4">
+        
         <a href="../index.php" class="list-group-item list-group-item-action bg-light">Dashboard </a>
-        <a href="../category/indexCategory.inc.php" class="list-group-item list-group-item-action bg-light">Category Master </a>
-        <a href="../productModule/showProductModule.inc.php" class="list-group-item list-group-item-action bg-light">Product Master</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Order Master </a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">User Master </a>
-        <a href="../contact_us/contact.inc.php" class="list-group-item list-group-item-action bg-light">Contact Us </a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Logout </a>
+
+        <a href="../category/indexCategory.inc.php" class="list-group-item list-group-item-action bg-light pt-4">Category Master </a>
+
+        <a href="../productModule/showProductModule.inc.php" class="list-group-item list-group-item-action bg-light pt-4">Product Master</a>
+
+        <a href="#" class="list-group-item list-group-item-action bg-light pt-4">Order Master </a>
+
+        <a href="#" class="list-group-item list-group-item-action bg-light pt-4">User Master </a>
+
+        <a href="../contact_us/contact.inc.php" class="list-group-item list-group-item-action bg-light pt-4">Contact Us </a>
+
+        <a href="#" class="list-group-item list-group-item-action bg-light pt-4">Logout </a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -63,7 +74,7 @@
               <img src="../assest/imgfolder/adminImg.png" alt="Avatar Logo" style="width:30px;" class="rounded-pill"> 
             </a>
             </li>
-            <!--<li class="nav-item dropdown">
+            <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown
               </a>
@@ -72,7 +83,7 @@
                 <a class="dropdown-item" href="#">Another action</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Something else here</a>
-              </div> --->
+              </div> -
            
           </ul>
         </div>

@@ -1,5 +1,7 @@
 <?php  include "../layoutModule/indexHeader.inc.php";?>
 <?php  include "../configDB/config.php";
+// Print_r($_GET);
+// Print_r($_POST);
 
 if(isset($_GET['type'])){  // active and deactive functionality //
         
@@ -22,48 +24,41 @@ if(isset($_GET['type'])){  // active and deactive functionality //
         $delSqlQry = " DELETE FROM `product_tbl` WHERE `product_id` =  '$del_id' ";
         $exDelSql = $conn->query($delSqlQry);    
     }
-
-    
-  
-  
- 
-}else{ 
+  }else{ 
     echo "";
 }
 ?>
 
-<table class="table table-hover table-bordered">
-  <thead class="bg-light">
-    <tr>
-    <th scope="col">Sr No</th>
-      <th scope="col">Pro_id</th>
-      <th scope="col">Cate_id</th>
-      <th scope="col">Name</th>
-      <th scope="col">Mrp</th>
-      <th scope="col">Price</th>
-      <th scope="col">qty</th>
-      <th scope="col">img</th>
-      <th scope="col">disp</th>
-      <th scope="col">Bdisp</th>
-      <th scope="col">Title</th>
-      <th scope="col">m_Dis</th>
-      <th scope="col">m_key</th>
-      <th scope="col">status</th>
-      
-    </tr>
-  </thead>
-<?php 
-$response[] = array();
-$sr = 1;
- $showSql = "SELECT product_tbl.*,`category_tbl`.`cate_name`  FROM `product_tbl`,category_tbl where `product_tbl`.`cate_id` = `category_tbl`.`cate_id` order by `product_tbl`.`product_id`";
-$exSql = $conn->query($showSql) or die("error in sql table");
 
-if($result = $exSql->num_rows > 0){
-    while($row = $exSql->fetch_array()){
-    $response = $row;
-    
-    
-?>
+<table class="table table-hover table-bordered">
+    <thead class="bg-light">
+        <tr>
+            <th scope="col">Sr No</th>
+            <th scope="col">Pro_id</th>
+            <th scope="col">Cate_id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Mrp</th>
+            <th scope="col">Price</th>
+            <th scope="col">qty</th>
+            <th scope="col">img</th>
+            <th scope="col">disp</th>
+            <th scope="col">Bdisp</th>
+            <th scope="col">Title</th>
+            <th scope="col">m_Dis</th>
+            <th scope="col">m_key</th>
+            <th scope="col">status</th>
+        </tr>
+    </thead>
+    <?php 
+        $response[] = array();
+        $sr = 1;
+        $showSql = "SELECT `product_tbl`.*,`category_tbl`.`cate_name`  FROM `product_tbl`,category_tbl where `product_tbl`.`cate_id` = `category_tbl`.`cate_id` order by `product_tbl`.`product_id`";
+        $exSql = $conn->query($showSql) or die("error in sql table");
+
+        if($result = $exSql->num_rows > 0){
+            while($row = $exSql->fetch_array()){
+            $response = $row;    
+    ?>
 
   <tbody>
     <tr class="table-active">
@@ -74,7 +69,7 @@ if($result = $exSql->num_rows > 0){
       <td><?php echo $response['3']; ?></td>
       <td><?php echo $response['4']; ?></td>
       <td><?php echo $response['5']; ?></td>
-      <td><?php echo $response['6']; ?></td>
+      <td><img src = "<?php echo $response['6']; ?> style ='hight: 100px widht: 100px;'"></td>
       <td><?php echo $response['7']; ?></td>
       <td><?php echo $response['8']; ?></td>
       <td><?php echo $response['9']; ?></td>

@@ -14,7 +14,7 @@ function addCate(){
              if(response == 1){
                 window.location = "../category/indexCategory.inc.php";
              }else if(response == 0){
-                 alert("data not get");
+                 alert("Data not get");
              }    
          },
 

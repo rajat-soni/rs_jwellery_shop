@@ -1,6 +1,6 @@
 
-<?php include 'layoutHeader.php'; ?>
-<div  class="conatiner-fluid">
+<?php include "layoutModule/indexHeader.inc.php"; ?>
+<div  class="container-fluid">
 	 
 		<div class="container mt-4">
 			<div class="row">
@@ -46,4 +46,4 @@
 	</div>
 
 
-<?php include 'layoutFooter.php'; ?>
+<?php include 'layoutModule/indexFooter.inc.php'; ?>

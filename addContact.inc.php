@@ -1,8 +1,8 @@
-<?Php include 'indexHeader.inc.php';?>
+<?Php include 'layoutModule/indexHeader.inc.php';?>
 
 
 <div class="container ">
-    <div class="row mt-4   bg-light" ">
+    <div class="row mt-4   bg-light">
    
           <div class="col-md-5" style="margin-top: -1px; margin-left:-15px;" >
           <img src="assest/imgfolder/contactImg.jpg" style="height:100%; width:100%; background-size:contain;"  alt="Avatar Logo"/>
@@ -49,4 +49,4 @@
 </div>
 
         
-<?Php include 'indexFooter.inc.php';?>
+<?Php include 'layoutModule/indexFooter.inc.php';?>
