@@ -1,6 +1,6 @@
 <?php  include "../layoutModule/indexHeader.inc.php";?>
 <?php  include "../configDB/config.php";
-// Print_r($_GET);
+Print_r($_GET);
 // Print_r($_POST);
 
 if(isset($_GET['type'])){  // active and deactive functionality //
@@ -57,7 +57,9 @@ if(isset($_GET['type'])){  // active and deactive functionality //
 
         if($result = $exSql->num_rows > 0){
             while($row = $exSql->fetch_array()){
-            $response = $row;    
+            $response = $row;
+            echo '<pre>'; 
+            print_r($response);   
     ?>
 
   <tbody>
@@ -69,7 +71,7 @@ if(isset($_GET['type'])){  // active and deactive functionality //
       <td><?php echo $response['3']; ?></td>
       <td><?php echo $response['4']; ?></td>
       <td><?php echo $response['5']; ?></td>
-      <td><img src = "<?php echo $response['6']; ?> style ='hight: 100px widht: 100px;'"></td>
+      <td><img src = "<?php echo $response['file'];?> style ='height:100px; width: 100px;'"></td>
       <td><?php echo $response['7']; ?></td>
       <td><?php echo $response['8']; ?></td>
       <td><?php echo $response['9']; ?></td>

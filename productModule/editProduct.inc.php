@@ -10,6 +10,7 @@ $runQry = $conn->query($sqlQry);
     while($result = $runQry->fetch_assoc()){
         $row = $result;
         // print_r($row);
+        $file=$row['file'];
     }
 }
     ?>
@@ -84,8 +85,8 @@ $runQry = $conn->query($sqlQry);
                                     <label>Product Images</label>
                                     </div>
                                     <div class="col-75 form-group">
-                                        
-                                        <input type="file"  name="file" value = "<?php echo ['file'];?>" >
+                                    <img src="../images/<?php echo $row["file"];?>" style="width:50px; height:40px;">
+                                        <input type="file"  name="file" value = "<?php echo $file;?>" >
                                     </div>
                                 </div>
                                 <div class="row p-4">

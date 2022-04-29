@@ -11,7 +11,7 @@ if(isset($_POST['submit'])){
      $file = $_FILES['file'];
      //print_r($file);
     $targetDir = "image/";
-    //print_r($targetDir);
+    print_r($targetDir);
     $file = basename($_FILES["file"]["name"]);
     //print_r($file);
     $targetFilePath = $targetDir . $file;
