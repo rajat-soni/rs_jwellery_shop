@@ -1,3 +1,6 @@
+
+<?php include '../function.inc/function.inc.php';
+prx($_SERVER);?>
 <!DOCTYPE html>
 <html lang="en">
 

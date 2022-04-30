@@ -1,5 +1,6 @@
 <?Php include '../layoutModule/indexHeader.inc.php';?>
-<?php include '../configDb/config.php';
+<?php include '../configDb/config.php'; 
+
 if(isset($_GET['product_id']) && $_GET['product_id'] != ""){
 
 $product_id = $conn->real_escape_string($_GET['product_id']);
@@ -10,7 +11,8 @@ $runQry = $conn->query($sqlQry);
     while($result = $runQry->fetch_assoc()){
         $row = $result;
         // print_r($row);
-        // $file=$row['file'];
+        //  $file=$row['file'];
+        //  print_r($file);
     }
 }
     ?>
@@ -85,8 +87,9 @@ $runQry = $conn->query($sqlQry);
                                     <label>Product Images</label>
                                     </div>
                                     <div class="col-75 form-group">
-                                    <img src="image/<?php echo $row['file'];?>" style="width:50px; height:40px;">
-                                        <input type="file"  name = "file" value = "image/<?php echo $row['file'];?>" >
+                                    
+                                        <input type="file"  name="file" >
+                                        <img src = "image/<?php echo  $row['file'];?>" style="width:50px; height:40px;">
                                     </div>
                                 </div>
                                 <div class="row p-4">

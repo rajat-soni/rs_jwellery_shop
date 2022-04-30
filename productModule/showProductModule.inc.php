@@ -71,7 +71,7 @@ if(isset($_GET['type'])){  // active and deactive functionality //
       <td><?php echo $response['3']; ?></td>
       <td><?php echo $response['4']; ?></td>
       <td><?php echo $response['5']; ?></td>
-      <td><img src = " image/<?php echo $response['file'];?>" style ='height:50px; width:50px;'></td>
+      <td><img src = " image/<?php echo $response['file'];?>" style ='height:40px; width:50px; '></td>
       <td><?php echo $response['7']; ?></td>
       <td><?php echo $response['8']; ?></td>
       <td><?php echo $response['9']; ?></td>
