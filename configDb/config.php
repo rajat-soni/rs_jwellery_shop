@@ -1,6 +1,7 @@
 <?php 
-
-
+error_reporting(0);
+// define('SERVER_PATH' , '$_SERVER["DOCUMENT_ROOT"].'/rs_jwellery_shop/'');
+//      define('ProductPath_' , '$_SERVER["DOCUMENT_ROOT"].'/rs_jwellery_shop/productModule/'');
      define('serverName','localhost');
      define('userName','root');
      define('password','');
@@ -11,7 +12,7 @@
          echo "error in connection";
      }
      
-     define('SERVER_PATH' , '$_SERVER["DOCUMENT_ROOT"].'/rs_jwellery_shop/');
-     echo serverPath;
+    
+    
 
 ?>
