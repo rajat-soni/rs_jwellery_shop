@@ -30,27 +30,27 @@
   <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
-    <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="bg-danger border-right" id="sidebar-wrapper">
     <a class="navbar-brand pl-5 pt-3" href="#">
-      <img src="../assest/imgfolder/adminImg.png" alt="Avatar Logo" style="width:50px;" class="rounded-pill"> 
+      <img src="../assest/imgfolder/adminImg.png" alt="Avatar Logo" style="width:50px; margin-left: 50px;" class="rounded-pill"> 
     </a>
     
     
-      <div class="list-group list-group-flush pl-2 pt-4">
+      <div class="list-group list-group-flush pl-2 pt-4 " id="">
         
-        <a href="../index.php" class="list-group-item list-group-item-action bg-light">Dashboard </a>
+        <a href="../index.php" class="list-group-item list-group-item-action bg-danger text-light ">Dashboard </a>
 
-        <a href="../category/indexCategory.inc.php" class="list-group-item list-group-item-action bg-light pt-4">Category Master </a>
+        <a href="../category/indexCategory.inc.php" class="list-group-item list-group-item-action pt-4 bg-danger text-light">Category Master </a>
 
-        <a href="../productModule/showProductModule.inc.php" class="list-group-item list-group-item-action bg-light pt-4">Product Master</a>
+        <a href="../productModule/showProductModule.inc.php" class="list-group-item list-group-item-action  pt-4 bg-danger text-light">Product Master</a>
 
-        <a href="#" class="list-group-item list-group-item-action bg-light pt-4">Order Master </a>
+        <a href="#" class="list-group-item list-group-item-action pt-4 bg-danger text-light">Order Master </a>
 
-        <a href="#" class="list-group-item list-group-item-action bg-light pt-4">User Master </a>
+        <a href="../userModule/addUser.inc.php" class="list-group-item list-group-item-action pt-4 bg-danger text-light">User Master </a>
 
-        <a href="../contact_us/contact.inc.php" class="list-group-item list-group-item-action bg-light pt-4">Contact Us </a>
+        <a href="../contact_us.inc/contact.inc.php" class="list-group-item list-group-item-action  pt-4 bg-danger text-light">Contact Us </a>
 
-        <a href="#" class="list-group-item list-group-item-action bg-light pt-4">Logout </a>
+        <a href="#" class="list-group-item list-group-item-action  pt-4 bg-danger text-light">Logout </a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -58,19 +58,19 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+      <nav class="navbar navbar-expand-lg navbar-light bg-danger border-bottom">
         <button class="btn btn-primary" id="menu-toggle">Slid left</button>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
        
-             <a class="nav-link" href="#">Welcome to Admin</span></a></p>
+             <a class="nav-link text-light" href="#">Welcome to Admin</span></a></p>
            
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Logout <span class="sr-only">(current)</span></a>
+              <a class="nav-link text-light" href="#">Logout <span class="sr-only">(current)</span></a>
             </li>
             <!-- <li class="nav-item">
             <a class="navbar-brand pl-5 pt-0" href="#">

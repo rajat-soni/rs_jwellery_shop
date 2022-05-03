@@ -9,7 +9,7 @@
     font-size: 17px;
   }
     #grad {
-   background-image: linear-gradient(to left, lightblue,lightpink);
+   background-image: linear-gradient(to left,#5800FF,#FFFDA2);
  }
  .error-msg{
  
@@ -42,4 +42,13 @@
  #btn_id2{
  
    border-radius: 0px;
+ }
+ /* #wrapper {
+   background-color: #0f0311;
+ } */
+ #sidebar-wrapper {
+   background-color: #0c0e0d;
+ }
+ .formcol {
+   background-color: ;
  }
