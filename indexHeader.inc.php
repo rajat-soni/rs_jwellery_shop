@@ -1,3 +1,13 @@
+<?php require 'admin/configDb/config.php';
+$row[] = array();
+$cateSql = "SELECT * from `category_tbl` where `status` = '1'";
+$exCate = $conn->query($cateSql) or die('Error in Sql table');
+while($result = $exCate->fetch_assoc()){
+    $row[] = $result;
+    // print_r($row);
+}
+
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -56,16 +66,16 @@
                             <div class="col-md-7 col-lg-8 col-sm-5 col-xs-3">
                                 <nav class="main__menu__nav hidden-xs hidden-sm">
                                     <ul class="main__menu">
-                                        <li class="drop"><a href="index.html">Home</a></li>
-                                        <li class="drop"><a href="#">women</a>
+                                        <li class="drop"><a href="index.inc.php">Home</a></li>
+                                        <li class="drop"><a href="#">categeory</a>
                                             <ul class="dropdown mega_dropdown">
                                                 <!-- Start Single Mega MEnu -->
                                                 <li><a class="mega__title" href="product-grid.html">Shop Pages</a>
                                                     <ul class="mega__item">
-                                                        <li><a href="product-grid.html">Product Grid</a></li>
-                                                        <li><a href="cart.html">cart</a></li>
-                                                        <li><a href="checkout.html">checkout</a></li>
-                                                        <li><a href="wishlist.html">wishlist</a></li>
+                                                        <?php foreach($row as $list){
+                                                            ?>
+                                                        <li><a href = "category.php&cate_id=<?php echo $list['cate_id'];?>"><?php echo $list['cate_name'];?></li>
+                                                        <?php } ?>
                                                     </ul>
                                                 </li>
                                                 <!-- End Single Mega MEnu -->
