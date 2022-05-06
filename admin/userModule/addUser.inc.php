@@ -6,7 +6,7 @@
                 <div class="col-10 ">
                     
                     <form method = "POST" action ="addUserData.inc.php">
-                        <div class ="card mt-5 alert alert-primary" id = "formCol">
+                        <div class ="card mt-5 alert alert-dark" id = "formCol">
                            <div class="card-header"> <h3> ADD USER FORM</div>
                             <div class="card-body">
                                 <div class="row">
@@ -47,7 +47,7 @@
                                         
                                         <input type="date"  name ="add_on"  class="form-control">
                                     </div>
-                                    <input type = "submit" name="submit" value="submit">
+                                    <input type = "submit" name="submit" value="submit" class="btn btn-danger">
                                 
                                 </div>
                                
