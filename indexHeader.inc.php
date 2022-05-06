@@ -1,10 +1,12 @@
 <?php require 'admin/configDb/config.php';
-$row[] = array();
-$cateSql = "SELECT * from `category_tbl` where `status` = '1'";
+    require 'function.inc.php';
+    //error_reporting(0);
+$row = array();
+$cateSql = "SELECT * from `category_tbl` where `status` = 1 order by `cate_name` asc ";
 $exCate = $conn->query($cateSql) or die('Error in Sql table');
-while($result = $exCate->fetch_assoc()){
+while($result = $exCate->fetch_array()){
     $row[] = $result;
-    // print_r($row);
+    //prx($row);
 }
 
 ?>
@@ -74,7 +76,7 @@ while($result = $exCate->fetch_assoc()){
                                                     <ul class="mega__item">
                                                         <?php foreach($row as $list){
                                                             ?>
-                                                        <li><a href = "category.php&cate_id=<?php echo $list['cate_id'];?>"><?php echo $list['cate_name'];?></li>
+                                                        <li><a href = "category.php&cate_id=<?php echo $list["cate_id"];?>"><?php echo $list["cate_name"];?></li>
                                                         <?php } ?>
                                                     </ul>
                                                 </li>
