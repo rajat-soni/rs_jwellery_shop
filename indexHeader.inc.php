@@ -2,7 +2,7 @@
     require 'function.inc.php';
     //error_reporting(0);
 $row = array();
-$cateSql = "SELECT * from `category_tbl` where `status` = 1 order by `cate_name` asc ";
+$cateSql = " SELECT * from `category_tbl` where `status`= 1 order by `cate_name` desc ";
 $exCate = $conn->query($cateSql) or die('Error in Sql table');
 while($result = $exCate->fetch_array()){
     $row[] = $result;
@@ -76,7 +76,10 @@ while($result = $exCate->fetch_array()){
                                                     <ul class="mega__item">
                                                         <?php foreach($row as $list){
                                                             ?>
-                                                        <li><a href = "category.php&cate_id=<?php echo $list["cate_id"];?>"><?php echo $list["cate_name"];?></li>
+                                                        <li>
+                                                            <a href="category.php?cate_id=<?php echo $list["cate_id"];?>">
+                                                            <?php echo $list["cate_name"];?>
+                                                        </li>
                                                         <?php } ?>
                                                     </ul>
                                                 </li>

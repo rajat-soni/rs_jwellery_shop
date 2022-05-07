@@ -145,7 +145,7 @@
                             <!-- Start Single Category -->
                             <?php 
                           
-                            $Data = getProductData($conn,'latest',4);
+                            $Data = getProductData($conn,3);
                             foreach($Data as $list) {
                             
                            ?>
@@ -153,8 +153,8 @@
                                 <div class="category">
                                     <div class="ht__cat__thumb">
                                         
-                                        <a href="product-details.html">
-                                            <img src="images/product/1.jpg" alt="product images">
+                                        <a href="Product.inc.php?product_id =<?php echo $list['product_id'];?>">
+                                            <img src="../admin/productModule/image/<?php echo $list['file'];?>" alt="product images">
                                         </a>
                                     </div>
                                     <div class="fr__hover__info">

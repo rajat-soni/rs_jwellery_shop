@@ -73,6 +73,7 @@
                             echo "<a href='?type=status&operation=active&cate_id=".$data['cate_id']."' class='btn btn-md bg-warning text-light'>Deactive</a>&nbsp;" ; //never leave the space between from href  to $data['cate_id'] and active id name same as database id  in anchor tag. //
                         }
                         echo "<a href='?type=delete&cate_id=".$data['cate_id']."' class='btn btn-md bg-danger text-light'>Delete</a> &nbsp;";
+                        
                         echo "<a href='editCate.inc.php?cate_id=".$data['cate_id']."' class='btn btn-md bg-primary text-light'>Edit</a>";
                         ?>
                     </td>
