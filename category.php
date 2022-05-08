@@ -1,12 +1,14 @@
 <?php require 'indexHeader.inc.php';
 //print_r($_GET);
 $cate_id = $_GET['cate_id'];
-//print_r($cate_id);
-
-//print_r($cate_id);
-
-//print_r($getProduct);
-
+if($cate_id > 0){
+$getProduct = getProductCate($conn,$cate_id,3);
+}else{ ?>
+   <script> 
+        window.location.href = 'index.inc.php';
+   </script> 
+   <?php
+}
 // ?>
 
 <div class="body__overlay"></div>
@@ -90,9 +92,9 @@ $cate_id = $_GET['cate_id'];
                         <div class="col-xs-12">
                             <div class="bradcaump__inner">
                                 <nav class="bradcaump-inner">
-                                  <a class="breadcrumb-item" href="index.html">Home</a>
-                                  <span class="brd-separetor"><i class="zmdi zmdi-chevron-right"></i></span>
-                                  <span class="breadcrumb-item active">Products</span>
+                                  <a class="breadcrumb-item" href="index.inc.php">Home</a>
+                                  <span class="brd-separetor"><i class="zmdi zmdi-chevron-right">Products</i></span>
+                                  
                                 </nav>
                             </div>
                         </div>
@@ -125,17 +127,18 @@ $cate_id = $_GET['cate_id'];
                                 <!-- End List And Grid View -->
                             </div>
                             <!-- Start Product View -->
+                            <?php if(count($getProduct)>0){?>
                             <div class="row">
                                 <div class="shop__grid__view__wrap">
                                     <div role="tabpanel" id="grid-view" class="single-grid-view tab-pane fade in active clearfix">
                                         <!-- Start Single Product -->
                                        <?php
-                                       $getProduct = getProductCate($conn,$cate_id,3);
+                                       
                                         foreach($getProduct as $list){?>
                                         <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
                                             <div class="category">
                                                 <div class="ht__cat__thumb">
-                                                    <a href="product.php?procduct_id = <?php echo $list['product_id'];?>">
+                                                    <a href="product.php?procduct_id=<?php echo $list['product_id'];?>">
                                                         <img src="admin//productModule/image/<?php echo $list['file'];?>" alt="product images">
                                                     </a>
                                                 </div>
@@ -158,6 +161,10 @@ $cate_id = $_GET['cate_id'];
                                             </div>
                                         </div>
                                         <?php }?>
+                                    </div>
+                                    <?php }else{
+                                        echo "Data not fount";
+                                    }   ?> 
                                         <!-- End Single Product -->
                                         <!-- Start Single Product -->
                                         <!-- <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">

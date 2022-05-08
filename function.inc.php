@@ -66,4 +66,32 @@ $getProductSql = " SELECT * FROM `product_tbl` where `status` = 1 ";
    
 }
 
+
+function getProductDetails($conn, $product_id ='', $limit = '') {
+   
+    $getProductSql = " SELECT `product_tbl`.*,`category_tbl`.`cate_name` FROM `product_tbl`,`category_tbl` where `product_tbl`.`status` = 1 ";
+       $res = array();
+       
+    //     if($type == 'latest'){
+    //   $getProductSql .= " order by `product_id` desc ";
+    //     }
+       
+       if($product_id != ""){
+           $getProductSql .= " and `product_id` = $product_id ";
+       }
+       if($limit != ''){
+        $getProductSql .= " limit $limit ";
+    }
+    // echo $getProductSql;
+       $exeProductSql = $conn->query($getProductSql) or die("Error in Sql"); 
+       while($result = $exeProductSql->fetch_array()){
+           $res[]= $result;
+           
+           
+       }  
+       return $res;
+      
+    }
+   
+    
 ?>

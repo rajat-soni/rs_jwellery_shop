@@ -108,31 +108,18 @@ while($result = $exCate->fetch_array()){
                                                 <!-- End Single Mega MEnu -->
                                             </ul>
                                         </li>
-                                        <li class="drop"><a href="#">men</a>
-                                            <ul class="dropdown mega_dropdown">
-                                                <!-- Start Single Mega MEnu -->
-                                                <li><a class="mega__title" href="product-grid.html">Shop Pages</a>
-                                                    <ul class="mega__item">
-                                                        <li><a href="product-grid.html">Product Grid</a></li>
-                                                        <li><a href="cart.html">cart</a></li>
-                                                        <li><a href="checkout.html">checkout</a></li>
-                                                        <li><a href="wishlist.html">wishlist</a></li>
-                                                    </ul>
-                                                </li>
-                                                <!-- End Single Mega MEnu -->
-                                                <!-- Start Single Mega MEnu -->
-                                                <li><a class="mega__title" href="product-grid.html">Variable Product</a>
-                                                    <ul class="mega__item">
-                                                        <li><a href="#">Category</a></li>
-                                                        <li><a href="#">My Account</a></li>
-                                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                                        <li><a href="cart.html">Shopping Cart</a></li>
-                                                        <li><a href="checkout.html">Checkout</a></li>
-                                                    </ul>
-                                                </li>
-                                                <!-- End Single Mega MEnu -->
-                                                <!-- Start Single Mega MEnu -->
-                                                <li><a class="mega__title" href="product-grid.html">Product Types</a>
+                                        
+                                        <li><a href="contact.inc.php">Contact</a></li>
+                                    </ul>
+                                </nav>
+
+                                <div class="mobile-menu clearfix visible-xs visible-sm">
+                                    <nav id="mobile_dropdown">
+                                        <ul>
+                                            <li><a href="index.inc.php">Home</a></li>
+                                            <li><a href="category.php">category</a></li>
+                                           
+                                            <li><a class="mega__title" href="product-grid.html">CategoryTypes</a>
                                                     <ul class="mega__item">
                                                         <li><a href="#">Simple Product</a></li>
                                                         <li><a href="#">Variable Product</a></li>
@@ -141,55 +128,8 @@ while($result = $exCate->fetch_array()){
                                                         <li><a href="#">Simple Product</a></li>
                                                     </ul>
                                                 </li>
-                                                <!-- End Single Mega MEnu -->
-                                            </ul>
-                                        </li>
-                                        <li class="drop"><a href="#">Product</a>
-                                            <ul class="dropdown">
-                                                <li><a href="product-grid.html">Product Grid</a></li>
-                                                <li><a href="product-details.html">Product Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="drop"><a href="blog.html">blog</a>
-                                            <ul class="dropdown">
-                                                <li><a href="blog.html">Blog Grid</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="drop"><a href="#">Pages</a>
-                                            <ul class="dropdown">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                                <li><a href="cart.html">Cart page</a></li>
-                                                <li><a href="checkout.html">checkout</a></li>
-                                                <li><a href="contact.html">contact</a></li>
-                                                <li><a href="product-grid.html">product grid</a></li>
-                                                <li><a href="product-details.html">product details</a></li>
-                                                <li><a href="wishlist.html">wishlist</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">contact</a></li>
-                                    </ul>
-                                </nav>
-
-                                <div class="mobile-menu clearfix visible-xs visible-sm">
-                                    <nav id="mobile_dropdown">
-                                        <ul>
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="blog.html">blog</a></li>
-                                            <li><a href="#">pages</a>
-                                                <ul>
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                                    <li><a href="cart.html">Cart page</a></li>
-                                                    <li><a href="checkout.html">checkout</a></li>
-                                                    <li><a href="contact.html">contact</a></li>
-                                                    <li><a href="product-grid.html">product grid</a></li>
-                                                    <li><a href="product-details.html">product details</a></li>
-                                                    <li><a href="wishlist.html">wishlist</a></li>
-                                                </ul>
                                             </li>
-                                            <li><a href="contact.html">contact</a></li>
+                                            <li><a href="contact.inc.php">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>  
@@ -197,15 +137,27 @@ while($result = $exCate->fetch_array()){
                             <div class="col-md-3 col-lg-2 col-sm-4 col-xs-4">
                                 <div class="header__right">
                                     <div class="header__search search search__open">
-                                        <a href="#"><i class="icon-magnifier icons"></i></a>
+                                        <a href="login.php"><i class="icon-magnifier icons"></i></a>
                                     </div>
                                     <div class="header__account">
-                                        <a href="#"><i class="icon-user icons"></i></a>
+                                        <a href="registration.inc.php">
+                                            <i class="icon-user icons">&nbsp;Register</i> 
+                                        
+                                    </a>
                                     </div>
                                     <div class="htc__shopping__cart">
-                                        <a class="cart__menu" href="#"><i class="icon-handbag icons"></i></a>
-                                        <a href="#"><span class="htc__qua">2</span></a>
+                                        <a class="" href="login.inc.php"><i>&nbsp;Login</i>
+                                        
+                                    </a>
+                                        <!-- <a href="#"><span class="htc__qua"></span></a> -->
                                     </div>
+
+                                    <!-- <div class="htc__shopping__cart">
+                                        <a class="cart__menu" href="#"><i>2</i>
+                                        
+                                    </a> -->
+                                        <!-- <a href="#"><span class="htc__qua"></span></a> -->
+                                    <!-- </div> -->
                                 </div>
                             </div>
                         </div>
