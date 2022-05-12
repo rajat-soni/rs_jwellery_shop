@@ -21,14 +21,17 @@ function sendMsg(){
                 query: query
             },
             success: function(response) { 
-                if (response)
+                if (response == 'email exist')
                 {
-                    alert("Data submited");
-                    window.location.href = 'index.inc.php';
+                   
+                    $("#user_error").html('email exist');
+                    window.location.href = 'login.inc.php';
+                   
                 }
-                else
+                if(response == 'inserted')
                 {
-                    alert('Invalid Credentials!');
+                    $("#user_error").html('data submitted');
+                    window.location.href = 'login.inc.php'; 
                 }
            }
        });
@@ -37,16 +40,22 @@ function sendMsg(){
     }
 }
 
+
 function loginForm(){
     var email = $('#email').val();
-
     var password = $('#password').val();
-    
-    
-    
-    
-    if(email!= '', password!= '') {
+    var error_msg = $('.field_eror').html('');
+    var is_error = '';
 
+    if(email== '') {
+        $('#email_error').html("enter your email");
+       is_error = 'yes';
+    }
+    if(password== '') {
+        $('#password_error').html("enter your password");
+       is_error = 'yes';
+    }
+    if(is_error ==''){
         $.ajax({
             type: "POST",
             url: "contactData.php",
@@ -57,18 +66,20 @@ function loginForm(){
                 
             },
             success: function(response) { 
-                if (response)
+
+                if (response == 'inserted')
                 {
-                    alert("Data submited");
+                    alert('succesfully login');
                     window.location.href = 'index.inc.php';
+                   
                 }
                 else
                 {
-                    alert('Invalid Credentials!');
+                    alert('please check credentials');
+                    window.location.href = 'login.inc.php';
                 }
            }
        });
-    }else{
-        alert("Field must be filled");
     }
 }
+

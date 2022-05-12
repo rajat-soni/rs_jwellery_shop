@@ -432,5 +432,58 @@
 })(jQuery);
 
 
+function registerData(){
+    var name = $('#name').val();
+    var email = $('#email_add').val();
+    
+    var mobile = $('#mobile').val();
+    var password = $('#password_id').val();
+
+    var error_msg = $('.field_error').html('');
+    var is_error = '';
+
+        if(name == '') {
+            $("#name_errorr").html("please enter name");
+            var is_error = "yes";
+        }  
+        if(email == '') {
+            $("#email_er").html("please enter email");
+            var is_error = "yes";
+        }
+        if(mobile == '') {
+            $("#mobile_error").html("please enter mobile");
+            var is_error = "yes";
+        }
+        if(password == '') {
+            $("#pasword_error").html("please enter password");
+            var is_error = "yes";
+        }
+        if(is_error == ''){
+          $.ajax({
+                type: "POST",
+                url: "registerData.inc.php",
+                data: {
+                    name: name,
+                    email: email,
+                    mobile: mobile,
+                    password: password
+                },
+                success: function(response) { 
+                    if (response == 'email exist')
+                    {
+                        
+                        $("#user_error").html('email exist');
+                        window.location.href = 'login.inc.php';
+                    }
+                    if (response == 'inserted')
+                    {
+                        $("#user_error").html('data successfully submitted');
+                        window.location.href = 'login.inc.php';
+                    }
+                }
+            });
+            
+        }
+}
 
 

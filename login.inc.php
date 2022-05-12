@@ -32,17 +32,20 @@
 								<!-- <form id="contact-form" action="#" method="post"> -->
 									<div class="single-contact-form">
 										<div class="contact-box name">
-											<input type="text" id = "email" placeholder="Your Email*" style="width:100%">
+											<input type="email" id = "email" placeholder="Your Email*" style="width:100%">
 										</div>
+										<span id ="email_error" class="field_eror " ></span>
 									</div>
 									<div class="single-contact-form">
 										<div class="contact-box name">
 											<input type="text" id ="password" placeholder="Your Password*" style="width:100%">
 										</div>
+										<span id ="password_error" class="field_eror " ></span>
 									</div>
 									
 									<div class="contact-btn">
 										<button type="submit" class="fv-btn" onclick = "loginForm()">Login</button>
+										<!-- <p class ="field_error" id = "user_error mt-3"></p> -->
 									</div>
 								</form>
 								<div class="form-output">
@@ -54,6 +57,8 @@
 				</div>
 				
 
+
+
 					<div class="col-md-6">
 						<div class="contact-form-wrap mt--60">
 							<div class="col-xs-12">
@@ -62,30 +67,35 @@
 								</div>
 							</div>
 							<div class="col-xs-12">
-								<form id="contact-form" action="#" method="post">
+								<!-- <form id="contact-form" action="#" method="post"> -->
 									<div class="single-contact-form">
 										<div class="contact-box name">
-											<input type="text" name="name" placeholder="Your Name*" style="width:100%">
+											<input type="text" id = "name" placeholder="Your Name*" style="width:100%">
 										</div>
+										<span class="field_error " id= "name_errorr"></span>
 									</div>
 									<div class="single-contact-form">
 										<div class="contact-box name">
-											<input type="text" name="name" placeholder="Your Email*" style="width:100%">
+											<input type="text" id ="email_add" placeholder="Your Email*" style="width:100%">
 										</div>
+										<span class="field_error " id = "email_er"></span>
 									</div>
 									<div class="single-contact-form">
 										<div class="contact-box name">
-											<input type="text" name="name" placeholder="Your Mobile*" style="width:100%">
+											<input type="number" id ="mobile" placeholder="Your Mobile*" style="width:100%">
 										</div>
+										<span class="field_error " id = "mobile_error"></span>
 									</div>
 									<div class="single-contact-form">
 										<div class="contact-box name">
-											<input type="text" name="name" placeholder="Your Password*" style="width:100%">
+											<input type="text" id="password_id" placeholder="Your Password*" style="width:100%">
 										</div>
+										<span class ="field_error" id = "pasword_error"></span>
 									</div>
 									
 									<div class="contact-btn">
-										<button type="submit" class="fv-btn">Register</button>
+										<button type="submit" class="fv-btn" onclick = "registerData()">Register</button>
+										<p class ="field_error" id = "user_error mt-3"></p>
 									</div>
 								</form>
 								<div class="form-output">

@@ -1,7 +1,14 @@
 <?php require 'indexHeader.inc.php';
 print_r($_GET);
  $product_id = $_GET['procduct_id'];
+ if($product_id >0){
  $getProduct = getProductDetails($conn,$product_id,3);
+ }else{ ?>
+ <script> 
+ window.location.href = 'index.inc.php';
+ </script>
+
+ <?php }
     ?>
                                               
         <div class="ht__bradcaump__area" style="background-image:url('../admin/productModule/image/pro.jpg');background-size: 100% 100%; background-repeat: no-repeat; cover ;">
