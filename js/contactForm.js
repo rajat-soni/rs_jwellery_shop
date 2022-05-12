@@ -41,9 +41,12 @@ function sendMsg(){
 }
 
 
+
 function loginForm(){
     var email = $('#email').val();
+    alert(email);
     var password = $('#password').val();
+alert(password);
     var error_msg = $('.field_eror').html('');
     var is_error = '';
 
@@ -55,16 +58,14 @@ function loginForm(){
         $('#password_error').html("enter your password");
        is_error = 'yes';
     }
-    if(is_error ==''){
+    if(is_error == ''){
         $.ajax({
-            type: "POST",
-            url: "contactData.php",
-            data: {
-                
-                email: email,
-                password: password
-                
-            },
+              type: "POST",
+              url: "loginData.php",
+              data: {
+                  email: email,
+                  password: password
+              },
             success: function(response) { 
 
                 if (response == 'inserted')

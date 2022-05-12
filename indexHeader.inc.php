@@ -136,14 +136,20 @@ while($result = $exCate->fetch_array()){
                             </div>
                             <div class="col-md-3 col-lg-2 col-sm-4 col-xs-4">
                                 <div class="header__right">
-                                    <div class="header__search search search__open">
+                                    <!-- <div class="header__search search search__open">
                                         <a href="login.php"><i class="icon-magnifier icons"></i></a>
-                                    </div>
+                                    </div> -->
                                     <div class="header__account">
-                                        <a href="registration.inc.php">
+                                        <!-- <a href="registration.inc.php">
                                             <i class="icon-user icons">&nbsp;Register</i> 
                                         
-                                    </a>
+                                    </a> -->
+                                    <?php  if(isset($_SESSION['USER_LOGIN'])){
+                                        echo '<a href = "logout.inc.php">Logout</a>';
+                                    }else{
+                                        echo '<a href = "login.inc.php">Login</a>';
+                                    }
+                                    ?>
                                     </div>
                                     <div class="htc__shopping__cart">
                                         <a class="" href="login.inc.php"><i>&nbsp;Login</i>

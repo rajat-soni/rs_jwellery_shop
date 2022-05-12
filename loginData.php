@@ -1,19 +1,30 @@
 <?php 
 	 require 'admin/configDb/config.php';
-    
+	
      	if(isset($_POST['email'])){
-			$email = $conn->real_escape_string($_POST['email']);
-			$password = $conn->real_escape_string($_POST['password']);
+			$email = $_POST['email'];
+			$password = $_POST['password'];
             $data = array();
-			$cate_sql = " SELECT * FROM `user_registration_tbl` WHERE `email` = '$email' and `password` = '$password' ";
+		 $cate_sql = " SELECT * FROM `user_registration_tbl` WHERE `email` = '$email' and `password` = '$password' ";
 			$mysql = $conn->query($cate_sql) or die("Sql not executed");
-			$result = $mysql->num_rows;
+			$check_user = $mysql->num_rows;
+			if($check_user > 0){
 			$loop = $mysql->fetch_assoc();
-			$row[] = $loop;
-			print($row);
-			echo "inserted";
+			$data[] = $loop;
+			$_SESSION['USER_LOGIN'] = 'yes';
+			$_SESSION['USER_ID'] = $data['reg_id'];
+			$_SESSION['USER_NAME'] =  $data['name'];
+			
+			
+			echo 'inserted';
+			}else{
+				echo 'not exist';
+
+
+			}
 		}else{
-      echo "email not found";
-}
+			 echo 'data not get';
+		}
+
 
 			
