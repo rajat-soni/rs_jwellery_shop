@@ -1,7 +1,7 @@
 <?php 
 	 require 'admin/configDb/config.php';
-	
-     	if(isset($_POST['email'])){
+	  session_start();
+     	
 			$email = $_POST['email'];
 			$password = $_POST['password'];
             $data = array();
@@ -10,21 +10,22 @@
 			$check_user = $mysql->num_rows;
 			if($check_user > 0){
 			$loop = $mysql->fetch_assoc();
-			$data[] = $loop;
+			$data = $loop;
+			// print_r($data);
+			session_start();
 			$_SESSION['USER_LOGIN'] = 'yes';
 			$_SESSION['USER_ID'] = $data['reg_id'];
+			
 			$_SESSION['USER_NAME'] =  $data['name'];
 			
 			
 			echo 'inserted';
 			}else{
-				echo 'not exist';
+				echo 'exist';
 
 
 			}
-		}else{
-			 echo 'data not get';
-		}
+		
 
 
 			

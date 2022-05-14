@@ -1,5 +1,7 @@
 <?php require 'admin/configDb/config.php';
     require 'function.inc.php';
+    require 'add_to_card.inc.php';
+    // session_start();
     //error_reporting(0);
 $row = array();
 $cateSql = " SELECT * from `category_tbl` where `status`= 1 order by `cate_name` desc ";
@@ -8,6 +10,8 @@ while($result = $exCate->fetch_array()){
     $row[] = $result;
     //prx($row);
 }
+$obj = new add_to_card();
+$totalProduct = $obj->total_product();
 
 ?>
 <!doctype html>
@@ -147,23 +151,18 @@ while($result = $exCate->fetch_array()){
                                     <?php  if(isset($_SESSION['USER_LOGIN'])){
                                         echo '<a href = "logout.inc.php">Logout</a>';
                                     }else{
-                                        echo '<a href = "login.inc.php">Login</a>';
+                                        echo '<a href = "login.inc.php">Login/Register</a>';
                                     }
                                     ?>
                                     </div>
-                                    <div class="htc__shopping__cart">
-                                        <a class="" href="login.inc.php"><i>&nbsp;Login</i>
-                                        
-                                    </a>
-                                        <!-- <a href="#"><span class="htc__qua"></span></a> -->
+                                    <div class="header__account">
+                                        <a href="#"><i class="icon-user icons"></i></a>
                                     </div>
-
-                                    <!-- <div class="htc__shopping__cart">
-                                        <a class="cart__menu" href="#"><i>2</i>
-                                        
-                                    </a> -->
-                                        <!-- <a href="#"><span class="htc__qua"></span></a> -->
-                                    <!-- </div> -->
+                                    <div class="htc__shopping__cart">
+                                        <a class="cart__menu" href="#"><i class="icon-handbag icons"></i></a>
+                                        <a href="cart.inc.php"><span class="htc__qua"><?php echo $totalProduct; ?></span></a>
+                                    </div> 
+                                 </div>
                                 </div>
                             </div>
                         </div>

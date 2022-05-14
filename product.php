@@ -1,8 +1,8 @@
 <?php require 'indexHeader.inc.php';
-print_r($_GET);
+// print_r($_GET);
  $product_id = $_GET['procduct_id'];
  if($product_id >0){
- $getProduct = getProductDetails($conn,$product_id,3);
+ $getProduct = getProductDetails($conn,$product_id,5);
  }else{ ?>
  <script> 
  window.location.href = 'index.inc.php';
@@ -81,12 +81,35 @@ print_r($_GET);
                                                 <div class="fr__product__inner">
                                                     <h4><a href="product-details.html">Product Name : &nbsp;<?php echo $getProduct['0']['product_name'];?></a></h4>
                                                     <ul class="fr__pro__prize">
-                                                        <li class="old__prize">Selling Price :&nbsp;<?php echo $getProduct['0']['selling_price'];?></li><br/>
-                                                        <li>Old Price: &nbsp;<?php echo $getProduct['0']['product_price'];?></li>
+                                                        <li class="old__prize">Selling Price :&nbsp;<?php echo $getProduct['0']['selling_price'];?></li></ul>
+                                                        <ul><li>Old Price: &nbsp;<?php echo $getProduct['0']['product_price'];?></li></ul>
+                                                        
+                                                    <ul><span>Availabity</span>
+                                                    <label>QTY&nbsp;<label>&nbsp;
+                                                       <select class="form-control" id = 'qty'>
+                                                           <option>1</option>
+                                                           <option>2</option>
+                                                           <option>3</option>
+                                                           <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            </select>
+                                                        </select>
                                                     </ul>
-                                                </div>
+                                                    <ul><li> cate name: &nbsp;<?php echo $getProduct['0']['cate_name'];?></li></ul>
+                                                    
+                                                
+                                                <ul>
+                                                    <li>
+                                                <div class="fr__list__btn">
+                                                            <a class="fr__btn" href="javascript:void(0)" onclick = "add_to_cart('<?php echo $getProduct['0']['product_id'];?>', 'add')" >Add To Cart</a>
+                                                        </div>
+ </li>
+ </ul>
+
                                             </div>
                                         </div>
+ </div>
                                        
                                         
                                     </div>
@@ -104,19 +127,30 @@ print_r($_GET);
                                                     <div class="htc__list__details">
                                                         <h2><a href="product-details.html">Product Name: &nbsp;<?php echo $getProduct['0']['product_name'];?> </a></h2>
                                                         <ul  class="pro__prize">
-                                                            <li class="old__prize">NewPrice: &nbsp;<?php echo $getProduct['0']['selling_price'];?></li>
-                                                            <li>Old Price : &nbsp;<?php echo $getProduct['0']['product_price'];?></li>
-                                                        </ul>
-                                                        <ul class="rating">
-                                                            <li><i class="icon-star icons"></i></li>
-                                                            <li><i class="icon-star icons"></i></li>
-                                                            <li><i class="icon-star icons"></i></li>
-                                                            <li class="old"><i class="icon-star icons"></i></li>
-                                                            <li class="old"><i class="icon-star icons"></i></li>
+                                                            <li class="old__prize">NewPrice: &nbsp;<?php echo $getProduct['0']['selling_price'];?></li></ul>
+                                                            <ul>
+                                                            <li>Old Price : &nbsp;<?php echo $getProduct['0']['product_price'];?></li></ul>
+                                                            
+                                                        <ul>
+                                                            <li>
+                                                                <span><b>Availabity</span>
+                                                                <label>QTY<label>
+                                                                <select class="form-control" id = 'qty'>
+                                                                    <option>1</option>
+                                                                    <option>2</option>
+                                                                    <option>3</option>
+                                                                    <option>4</option>
+                                                                    <option>5</option>
+                                                                    <option>6</option>
+                                                            </select>
+                                                        </li>
                                                         </ul>
                                                         <p>Lorem ipsum dolor sit amet, consectetur adipisLorem ipsum dolor sit amet, consec adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqul Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                        <ul><li>cate name: &nbsp;<?php echo $getProduct['0']['cate_name'];?></li>
+                                                        
+                                                        </ul>
                                                         <div class="fr__list__btn">
-                                                            <a class="fr__btn" href="cart.html">Add To Cart</a>
+                                                            <a class="fr__btn" href="javascript:void(0)" onclick = "add_to_cart('<?php echo $getProduct['0']['product_id'];?>','add')">Add To Cart</a>
                                                         </div>
                                                     </div>
                                                 </div>

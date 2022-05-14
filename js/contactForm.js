@@ -44,9 +44,7 @@ function sendMsg(){
 
 function loginForm(){
     var email = $('#email').val();
-    alert(email);
     var password = $('#password').val();
-alert(password);
     var error_msg = $('.field_eror').html('');
     var is_error = '';
 
@@ -63,18 +61,18 @@ alert(password);
               type: "POST",
               url: "loginData.php",
               data: {
-                  email: email,
-                  password: password
+                  email:email,
+                  password:password
               },
             success: function(response) { 
 
-                if (response == 'inserted')
+                if (response == "inserted")
                 {
                     alert('succesfully login');
                     window.location.href = 'index.inc.php';
                    
                 }
-                else
+                if (response == "exist")
                 {
                     alert('please check credentials');
                     window.location.href = 'login.inc.php';
@@ -83,4 +81,24 @@ alert(password);
        });
     }
 }
+
+function add_to_cart(product_id,type){
+    
+    var qty = $('#qty').val();
+    
+        $.ajax({
+              type: "POST",
+              url: "manageCarte.php",
+              data: {
+                  product_id: product_id,
+                  qty: qty,
+                  type : type
+              },
+            success: function(result) { 
+                $(".htc__qua").html(result);
+           }
+       });
+    
+}
+
 

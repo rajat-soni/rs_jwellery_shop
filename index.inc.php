@@ -145,7 +145,7 @@
                             <!-- Start Single Category -->
                             <?php 
                           
-                            $Data = getProductData($conn,3);
+                            $Data = getProductData($conn,5);
                             foreach($Data as $list) {
                             
                            ?>

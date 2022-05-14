@@ -46,7 +46,7 @@ if(isset($_POST['product_id'])){  // update record //
         
         $exSql = $conn->query($Sql);
         move_uploaded_file($tmp_name,$location);
-        // echo '<img src = "'.$location.'<?php echo  $row["file"];?>" style="width:50px; height:40px;">';
+        
     
         if($exSql){
            
