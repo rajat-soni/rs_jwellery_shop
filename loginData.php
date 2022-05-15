@@ -12,7 +12,7 @@
 			$loop = $mysql->fetch_assoc();
 			$data = $loop;
 			// print_r($data);
-			session_start();
+			// session_start();
 			$_SESSION['USER_LOGIN'] = 'yes';
 			$_SESSION['USER_ID'] = $data['reg_id'];
 			

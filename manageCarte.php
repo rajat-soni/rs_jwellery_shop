@@ -8,9 +8,19 @@
         $type = $_POST['type'];
         $obj = new add_to_card();
     //    print_r($obj->add_product($product_id, $qty));
+
         if($type == 'add'){
              $obj->add_product($product_id, $qty);
         }
+
+        if($type == 'update'){
+            $obj->update_cart($product_id,$qty);
+       }
+
+       if($type == 'remove'){
+        $obj->remove_cart($product_id);
+   }
+
         echo $obj->total_product();
 			
 

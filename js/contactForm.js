@@ -83,8 +83,16 @@ function loginForm(){
 }
 
 function add_to_cart(product_id,type){
+    if(type == 'update'){
+
+      var qty = $("#"+product_id+"qty").val();
+
+    }else{
+
+        var qty = $('#qty').val();
+    }
     
-    var qty = $('#qty').val();
+    
     
         $.ajax({
               type: "POST",
@@ -95,10 +103,48 @@ function add_to_cart(product_id,type){
                   type : type
               },
             success: function(result) { 
+                if(type == 'update' || type == 'remove'){
+                    window.location.href = 'cart.inc.php';
+                    alert("cart successfully remove");
+                }
+                $(".htc__qua").html(result);
+           }
+       });
+}
+
+
+
+function check_out(product_id,type){
+    if(type == 'update'){
+
+      var qty = $("#"+product_id+"qty").val();
+
+    }else{
+
+        var qty = $('#qty').val();
+    }
+    
+    
+    
+        $.ajax({
+              type: "POST",
+              url: "manageCarte.php",
+              data: {
+                  product_id: product_id,
+                  qty: qty,
+                  type : type
+              },
+            success: function(result) { 
+                if(type == 'update' || type == 'remove'){
+                    window.location.href = 'checkout.inc.php';
+                    alert("cart successfully remove");
+                }
                 $(".htc__qua").html(result);
            }
        });
     
 }
+
+
 
 

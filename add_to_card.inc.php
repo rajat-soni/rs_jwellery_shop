@@ -7,7 +7,7 @@ class add_to_card{
         $_SESSION['cart'][$product_id]['qty'] = $qty;
     }
 
-    function updateCart($product_id,$qty) {
+    function update_cart($product_id,$qty) {
 
         if(isset($_SESSION['cart'][$product_id])){
 
@@ -16,7 +16,7 @@ class add_to_card{
 
     }
 
-    function removeCart($product_id) {
+    function remove_cart($product_id) {
 
         if(isset($_SESSION['cart'][$product_id])){
             unset($_SESSION['cart'][$product_id]);
