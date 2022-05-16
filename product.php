@@ -2,7 +2,7 @@
 // print_r($_GET);
  $product_id = $_GET['procduct_id'];
  if($product_id >0){
- $getProduct = getProductDetails($conn,$product_id,5);
+ $getProduct = getProductDetails($conn,$product_id,4);
  }else{ ?>
  <script> 
  window.location.href = 'index.inc.php';
@@ -97,19 +97,17 @@
                                                         </select>
                                                     </ul>
                                                     <ul><li> cate name: &nbsp;<?php echo $getProduct['0']['cate_name'];?></li></ul>
-                                                    
-                                                
                                                 <ul>
                                                     <li>
                                                 <div class="fr__list__btn">
                                                             <a class="fr__btn" href="javascript:void(0)" onclick = "add_to_cart('<?php echo $getProduct['0']['product_id'];?>', 'add')" >Add To Cart</a>
                                                         </div>
- </li>
- </ul>
+                                                    </li>
+                                                </ul>
 
                                             </div>
                                         </div>
- </div>
+                                     </div>
                                        
                                         
                                     </div>

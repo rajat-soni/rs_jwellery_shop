@@ -1,4 +1,13 @@
-<?php require 'indexHeader.inc.php';?>
+<?php require 'indexHeader.inc.php';
+         if(!isset($_SESSION['cart']['0']) && count($_SESSION['cart'] ) == 0){?>
+            <script> 
+            window.location.href  = 'index.inc.php';
+            alert("Please Add Product First");
+            </script>
+            <?php } ?> 
+
+
+
 <div class="shopping__cart">
                 <div class="shopping__cart__inner">
                     <div class="offsetmenu__close__btn">
@@ -57,7 +66,7 @@
                         <div class="col-xs-12">
                             <div class="bradcaump__inner">
                                 <nav class="bradcaump-inner">
-                                  <a class="breadcrumb-item" href="index.html">Home</a>
+                                  <a class="breadcrumb-item" href="index.inc.php">Home</a>
                                   <span class="brd-separetor"><i class="zmdi zmdi-chevron-right"></i></span>
                                   <span class="breadcrumb-item active">checkout</span>
                                 </nav>
@@ -69,14 +78,20 @@
         </div>
         <!-- End Bradcaump area -->
         <!-- cart-main-area start -->
-        <div class="checkout-wrap ptb--100">
+        <div class="checkout-wrap ptb--100 pb-5">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
                         <div class="checkout__inner">
                             <div class="accordion-list">
                                 <div class="accordion">
-                                    <div class="accordion__title">
+                                    <?php 
+                                    $accodoin_class = 'accordion__title';
+                                    if(!isset($_SESSION['USER_LOGIN'])){
+                                        $accodoin_class = 'accordion__hide';
+                                        
+                                        ?>
+                                    <div class="accordion__hide">
                                         Checkout Method
                                     </div>
                                     <div class="accordion__body">
@@ -84,26 +99,30 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="checkout-method__login">
-                                                        <form action="#">
+                                                        
                                                             <h5 class="checkout-method__title">Login</h5>
                                                             <div class="single-input">
                                                                 <label for="user-email">Email Address</label>
-                                                                <input type="email" id="user-email">
+                                                                <input type="email" id = "email" placeholder="Your Email*" style="width:100%">
+                                                                <span id ="email_error" class="field_eror " ></span>
+                                                                
                                                             </div>
                                                             <div class="single-input">
                                                                 <label for="user-pass">Password</label>
-                                                                <input type="password" id="user-pass">
+                                                                <input type="text" id ="password" placeholder="Your Password*" style="width:100%"><span id ="password_error" class="field_eror " ></span>
+                                                               
                                                             </div>
-                                                            <p class="require">* Required fields</p>
-                                                            <div class="dark-btn">
+                                                           
+                                                            <div class="dark-btn" onclick = "checkInLogin()">
                                                                 <a href="#">LogIn</a>
                                                             </div>
-                                                        </form>
+                                                        
                                                     </div>
                                                 </div>
+                                                
                                                 <div class="col-md-6">
                                                     <div class="checkout-method__login">
-                                                        <form action="#">
+                                                        
                                                             <h5 class="checkout-method__title">Register</h5>
                                                             <div class="single-input">
                                                                 <label for="user-email">Name</label>
@@ -121,75 +140,74 @@
                                                             <div class="dark-btn">
                                                                 <a href="#">Register</a>
                                                             </div>
-                                                        </form>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="accordion__title">
+                                    <?php }?>
+                                    <div class="<?php echo $accodoin_class;?>">
                                         Address Information
                                     </div>
-                                    <div class="accordion__body">
-                                        <div class="bilinfo">
-                                            <form action="#">
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="single-input">
-                                                            <input type="text" placeholder="First name">
+
+
+                                    <form method ="POST" action = "checkoutData.inc.php" >
+                                        <div class="accordion__body">
+                                            <div class="bilinfo">
+                                               
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="single-input">
+                                                                <input type="text" name = "address" placeholder="Street Address" required>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="single-input">
-                                                            <input type="text" placeholder="Street Address">
+                                                        
+                                                        <div class="col-md-6">
+                                                            <div class="single-input">
+                                                                <input type="text" placeholder="State address" name = "state" required>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="single-input">
-                                                            <input type="text" placeholder="Apartment/Block/House (optional)">
+                                                        <div class="col-md-6">
+                                                            <div class="single-input">
+                                                                <input type="text" name ="city" placeholder="city address" required>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="single-input">
-                                                            <input type="text" placeholder="City/State">
+                                                        <div class="col-md-6">
+                                                            <div class="single-input">
+                                                                <input type="number" name = "pin" placeholder="pin code address" required>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="single-input">
-                                                            <input type="text" placeholder="Post code/ zip">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="single-input">
-                                                            <input type="email" placeholder="Email address">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="single-input">
-                                                            <input type="text" placeholder="Phone number">
+                                                        <div class="col-md-6">
+                                                            <div class="single-input">
+                                                                <input type="text" name = "mobile" placeholder="Phone number" required>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="<?php echo $accodoin_class;?>">
+                                            payment information
+                                            </div>
+                                            <div class="accordion__body">
+                                                <div class="paymentinfo">
+                                                    <div class="single-method">
+                                                        &nbsp;COD&nbsp;<input type = "radio" name ="payment_type" value = "COD" required>
+                                                    
+                                                        &nbsp;payU &nbsp;<input type = "radio" name ="payment_type" value = "payU" required>
+                                                    </div>
+                                                  
+                                                        <input type = "submit" name ="save">
+                                                  
+                                                </div>
+                                            </div>
                                             </form>
                                         </div>
                                     </div>
-                                    <div class="accordion__title">
-                                        payment information
-                                    </div>
-                                    <div class="accordion__body">
-                                        <div class="paymentinfo">
-                                            <div class="single-method">
-                                                <a href="#"><i class="zmdi zmdi-long-arrow-right"></i>Check/ Money Order</a>
-                                            </div>
-                                            <div class="single-method">
-                                                <a href="#" class="paymentinfo-credit-trigger"><i class="zmdi zmdi-long-arrow-right"></i>Credit Card</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                              
                             </div>
                         </div>
-                    </div>
+                        </form>
                     <div class="col-md-4">
                         <div class="order-details">
                             <h5 class="order-details__title">Your Order</h5>

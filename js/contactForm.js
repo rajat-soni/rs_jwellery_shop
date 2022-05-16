@@ -82,6 +82,7 @@ function loginForm(){
     }
 }
 
+
 function add_to_cart(product_id,type){
     if(type == 'update'){
 
@@ -144,6 +145,48 @@ function check_out(product_id,type){
        });
     
 }
+
+
+function checkInLogin(){
+    var email = $('#email').val();
+    var password = $('#password').val();
+    var error_msg = $('.field_eror').html('');
+    var is_error = '';
+
+    if(email== '') {
+        $('#email_error').html("enter your email");
+       is_error = 'yes';
+    }
+    if(password== '') {
+        $('#password_error').html("enter your password");
+       is_error = 'yes';
+    }
+    if(is_error == ''){
+        $.ajax({
+              type: "POST",
+              url: "loginData.php",
+              data: {
+                  email:email,
+                  password:password
+              },
+            success: function(response) { 
+
+                if (response == "inserted")
+                {
+                    alert('succesfully login');
+                    window.location.href = 'checkout.inc.php';
+                   
+                }
+                if (response == "exist")
+                {
+                    alert('please check credentials');
+                    window.location.href = 'login.inc.php';
+                }
+           }
+       });
+    }
+}
+
 
 
 
