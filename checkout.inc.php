@@ -4,7 +4,58 @@
             window.location.href  = 'index.inc.php';
             alert("Please Add Product First");
             </script>
-            <?php } ?> 
+            <?php } 
+            $total_amount = 0;
+        if(isset($_POST['save'])){
+            
+            $user_id = $_SESSION['USER_ID'];
+            $adress = $_POST['address'];
+            $state = $_POST['state'];
+            $city = $_POST['city'];
+            $pin = $_POST['pin'];
+            $mobile = $_POST['mobile'];
+            $payment_type = $_POST['payment_type'];
+            
+            foreach($_SESSION['cart'] as $key=>$value){
+                $getcarte =  getProductDetails($conn,$key);   
+                $selling = $getcarte['0']['selling_price'];
+                $qty = $value['qty'];
+                $total_amount = $total_amount+($selling*$qty);
+            }
+                $total_price = $total_amount;
+                $payment_status = 'success';
+                    if($payment_type == 'COD'){
+                        $payment_status =  "success";
+                    }
+                $order_status = 1;
+                $add_on = date('y-m-d h:i:s');  
+                $sql = " INSERT INTO `order_tbl`(`user_id`, `address`, `state`, `city`, `pin`, `mobile`, `payment_type`, `price`,`payment_status`,`order_status`, `add_on`) 
+                VALUES ('$user_id','$adress','$state', '$city','$pin','$mobile','$payment_type','$total_price', '$payment_status', '$order_status' ,'$add_on')";
+                $exSql = $conn->query($sql) or die("error in sql");
+        
+                $order_id = $conn->insert_id; 
+            
+                foreach($_SESSION['cart'] as $key=>$value){
+                    $getcarte =  getProductDetails($conn,$key);
+                     
+                    $selling = $getcarte['0']['selling_price'];
+                    // $product_id = $key;
+                    $qty = $value['qty'];
+                
+                    $sqlQury = " INSERT INTO `order_details_tbl`(`order_id`, `product_id`, `qty`, `price`) VALUES ('$order_id','$key','$qty','$selling') ";
+                    $runQury = $conn->query($sqlQury) or die("Error in get order detail table data");
+                    // print_r($sqlQury);
+                    
+                }
+                
+                         unset($_SESSION['cart']);
+                        ?>
+                            <script> 
+                                alert("data successfully submitred");
+                                window.location.href  = 'thankyou.inc.php';
+                            </script>
+                        <?php }  
+    ?>    
 
 
 
@@ -147,15 +198,16 @@
                                         </div>
                                     </div>
                                     <?php }?>
+                                    
                                     <div class="<?php echo $accodoin_class;?>">
                                         Address Information
                                     </div>
 
 
-                                    <form method ="POST" action = "checkoutData.inc.php" >
+                                    
                                         <div class="accordion__body">
                                             <div class="bilinfo">
-                                               
+                                            <form method ="POST" >
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="single-input">
@@ -198,7 +250,7 @@
                                                     </div>
                                                   
                                                         <input type = "submit" name ="save">
-                                                  
+                                                        
                                                 </div>
                                             </div>
                                             </form>
@@ -207,30 +259,32 @@
                               
                             </div>
                         </div>
-                        </form>
+                        <!-- </form> -->
                     <div class="col-md-4">
                         <div class="order-details">
                             <h5 class="order-details__title">Your Order</h5>
                             <div class="order-details__item">
 
-                            <?php  foreach($_SESSION['cart'] as $key=>$value){
-                                            $getcarte =  getProductDetails($conn,$key);
-                                            $total_amount = 0;
-                                            $name = $getcarte['0']['product_name'];
-                                            $image = $getcarte['0']['file'];
-                                            $price = $getcarte['0']['product_price'];
-                                            $selling = $getcarte['0']['selling_price'];
-                                            $qty = $value['qty'];
-                                            $total_amount = $total_amount+($selling*$qty);
-                                           
-                                            ?>
+                            <?php  
+                                $total_amount = 0;
+                                foreach($_SESSION['cart'] as $key=>$value){
+                                    $getcarte =  getProductDetails($conn,$key);
+                                    $name = $getcarte['0']['product_name'];
+                                    $image = $getcarte['0']['file'];
+                                    $price = $getcarte['0']['product_price'];
+                                    $selling = $getcarte['0']['selling_price'];
+                                    $qty = $value['qty']; 
+                                    $total_amount =  $total_amount+($selling*$qty);
+                                            
+                                            
+                                ?>
                                 <div class="single-item">
                                     <div class="single-item__thumb">
                                         <img src="../admin/productModule/image/<?php echo $image;?>" alt="ordered item">
                                     </div>
                                     <div class="single-item__content">
                                         <a href="#"><?php echo $name;?></a>
-                                        <span class="price"><?php echo $selling;?></span>
+                                        <span class="price"><?php echo $selling*$qty;?></span>
                                     </div>
                                     <div class="single-item__remove">
                                         <a href="javascript: void(0)"onclick = "check_out('<?php echo $key;?>','remove')"><i class="zmdi zmdi-delete"></i></a>

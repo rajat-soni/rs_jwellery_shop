@@ -1,7 +1,3 @@
-<!-- /#wrapper -->
-
-  <!-- Bootstrap core JavaScript -->
-
 <p class ="text-right mt-2 fixed-bottom">&copy; Powered by EMS 2022</p>
 
   <script src="https://code.jquery.com/jquery-3.6.0.js"
@@ -12,13 +8,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Menu Toggle Script -->
-  <script src="../assest/customjs/layout.js"></script>
-  <script src="../assest/customjs/donut.js"></script>
+ 
   <script src = "../assest/customjs/login.js"></script>
-<script src = "../assest/customjs/addCategory.js"></script>
-<script src = "../assest/customjs/contactForm.js"></script>
-<script src = "../assest/customjs/addProductForm.js"></script>
 
+
+  
+  
 </body>
 
 </html>

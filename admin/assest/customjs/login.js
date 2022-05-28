@@ -12,7 +12,7 @@ function loginForm(){
          data : {username: user_name, password: password},
          success : function(response){
              if(response == 1){
-                window.location = "../category/category.inc.php";
+                window.location = "../category/indexCategory.inc.php";
              }else if(response == 0){
                  alert("data not get");
              }    

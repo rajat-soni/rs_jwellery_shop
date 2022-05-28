@@ -1,5 +1,11 @@
-<?php require 'indexHeader.inc.php';?>
-<div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(images/bg/4.jpg) no-repeat scroll center center / cover ;">
+<?php require 'indexHeader.inc.php';
+if(isset($_SESSION['USER_LOGIN']) && $_SESSION['USER_LOGIN'] == 'yes'){?>
+  <script>
+	  window.location.href = 'my_order.inc.php';
+  </script>
+<?php }
+?>
+<div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(../admin/productModule/image/loginImg.jpg) no-repeat scroll center center / cover ;">
             <div class="ht__bradcaump__wrap">
                 <div class="container">
                     <div class="row">

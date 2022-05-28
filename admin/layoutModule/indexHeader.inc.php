@@ -1,6 +1,7 @@
 
 <?php include '../function.inc/function.inc.php';
-// prx($_SERVER);?>
+// prx($_SERVER);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +32,8 @@
 
     <!-- Sidebar -->
     <div class="bg-danger border-right" id="sidebar-wrapper">
-    <a class="navbar-brand pl-5 pt-3" href="#">
+    <a class="navbar-brand pl-5 pt-0" href="#">
+   
       <img src="../assest/imgfolder/adminImg.png" alt="Avatar Logo" style="width:50px; margin-left: 50px;" class="rounded-pill"> 
     </a>
     
@@ -44,13 +46,14 @@
 
         <a href="../productModule/showProductModule.inc.php" class="list-group-item list-group-item-action  pt-4 bg-danger text-light">Product Master</a>
 
-        <a href="#" class="list-group-item list-group-item-action pt-4 bg-danger text-light">Order Master </a>
+        <a href="../order/showOrderMster.inc.php" class="list-group-item list-group-item-action pt-4 bg-danger text-light">Order Master </a>
 
         <a href="../userModule/addUser.inc.php" class="list-group-item list-group-item-action pt-4 bg-danger text-light">User Master </a>
 
         <a href="../contact_us.inc/contact.inc.php" class="list-group-item list-group-item-action  pt-4 bg-danger text-light">Contact Us </a>
 
         <a href="#" class="list-group-item list-group-item-action  pt-4 bg-danger text-light">Logout </a>
+       
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -90,4 +93,5 @@
            
           </ul>
         </div>
+
       </nav>
