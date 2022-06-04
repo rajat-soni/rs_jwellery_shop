@@ -40,8 +40,9 @@
 ?>
 
 <div class="container">
+    
 <a href="addCate.inc.php" class="btn btn-info mt-4 mb-2" role="button">Add Category</a>
-<table class="table table-hover table-bordered mt-4 btn-light shadow">
+<table class="table table-hover table-bordered mt-4 btn-light shadow" id ="tblUser">
     <thead>
         <tr class="text-center btn-info">
         <th scope="col">Sr No</th>

@@ -1,6 +1,6 @@
 <?php 
 session_start();
-class add_to_card{
+class add_to_card {
     
     function add_product($product_id,$qty) {
      

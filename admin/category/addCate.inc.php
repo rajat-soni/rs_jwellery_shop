@@ -1,7 +1,7 @@
 <?php
 
 include '../layoutModule/indexHeader.inc.php'; ?>
-<div class="container mt-4 " id="wraperDiv">
+<div class="container-fluid mt-2 " id="">
     <!-- <form action="/action_page.php"> -->
         <div class="row mt-4">
             <div class="col-25 pl-4">

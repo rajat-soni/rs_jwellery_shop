@@ -1,16 +1,13 @@
-@font-face {
-    font-family: myFirstFont;
-    src: url(sansation_light.woff);
- }
- 
- * {
-    font-family: myFirstFont;
-    font-weight: bold;
-    font-size: 17px;
-  }
+body {font-family : 'Merriweather', serif; }
+
     #grad {
-   background-image: linear-gradient(to left,#5800FF,#FFFDA2);
+      background-image: linear-gradient(to left,#b5dae4f8,#e3a2ec);
  }
+ #isCard {
+  background-image: linear-gradient(to left,#b5dae4f8,#e3a2ec);
+}
+ 
+ 
  .error-msg{
  
    background:#ddc2e0;
@@ -46,9 +43,116 @@
  /* #wrapper {
    background-color: #0f0311;
  } */
- #sidebar-wrapper {
-   background-color: #0c0e0d;
+
+ #sidebar-wrapper,a{
+  background-image: linear-gradient(to left,#b5dae4f8,#e3a2ec);
+
  }
+
+ 
  .formcol {
    background-color: ;
  }
+ 
+ #isBtn {
+   margin-left: 70%;
+ }
+
+ input[type=text] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgb(214, 162, 162);
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  border-radius: 0px;
+  font-size :21px;
+}
+input[type=password] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgb(214, 162, 162);
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  border-radius: 0px;
+  font-size : 21px;
+}
+input[type=email] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgb(214, 162, 162);
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  border-radius: 0px;
+  font-size : 21px;
+}
+input[type=number] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgb(214, 162, 162);
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  border-radius: 0px;
+  font-size : 21px;
+  border-radius: 0px;
+}
+
+input[type=date] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgb(214, 162, 162);
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  border-radius: 0px;
+  font-size : 21px;
+ 
+}
+#password {
+  border-radius: 0px;
+  width : 100%;
+  height : 60px;
+}
+#username {
+  border-radius: 0px;
+  width : 100%;
+  height : 60px;
+}
+.card-header{
+ padding: 22px;
+}
+.card-footer{
+  padding: 22px;
+}
+#page-content-wrapper , .navbar, .btn {
+  background-image: linear-gradient(to left,#b5dae4f8,#e3a2ec);
+}
+#status {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgb(214, 162, 162);
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  border-radius: 0px;
+  font-size : 21px;
+ 
+}
+/* .table , thead , tr>td{
+  border: 2px solid black ;
+} */

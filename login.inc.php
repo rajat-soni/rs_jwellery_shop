@@ -35,7 +35,7 @@ if(isset($_SESSION['USER_LOGIN']) && $_SESSION['USER_LOGIN'] == 'yes'){?>
 								</div>
 							</div>
 							<div class="col-xs-12">
-								 <!-- <form id="contact-form" action="#" method="post"> --> -->
+								 <!-- <form id="contact-form" action="#" method="post"> -->
 									<div class="single-contact-form">
 										<div class="contact-box name">
 											<input type="email" id = "email" placeholder="Your Email*" style="width:100%">

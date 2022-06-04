@@ -1,11 +1,44 @@
 /* Style inputs, select elements and textareas */
-input[type=text], select, textarea{
+body : {
+  font-family : 'Merriweather', serif;}
+  
+input[type=text], textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgb(214, 162, 162);
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  border-radius: 0px;
+  font-size: 20px;
+}
+
+  input[type=file]{
     width: 100%;
     padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    
+    border-radius: 6px;
     box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
     resize: vertical;
+    border-radius: 0px;
+ }
+
+  #isSelect {
+    width: 100%;
+  padding: 12px;
+  border: 1px solid rgb(214, 162, 162);
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  border-radius: 0px;
+font-size: 20px;
+ text-align:left;
   }
   
   /* Style the label to display next to the inputs */
@@ -16,19 +49,21 @@ input[type=text], select, textarea{
   
   /* Style the submit button */
   input[type=submit] {
-    background-color: #04AA6D;
-    color: white;
+    background-color: #94d3bc;
+    color: rgb(32, 28, 28);
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     float: right;
+    border-radius: 0px;
+     
   }
   
   /* Style the container */
   #wraperDiv {
     border-radius: 5px;
-    background-color: #FFFDA2;
+    background-color: #0aee87;
     padding: 20px;
   }
   
@@ -37,6 +72,9 @@ input[type=text], select, textarea{
     float: left;
     width: 25%;
     margin-top: 6px;
+    font-size: 18px;
+    font-weight: bold;
+   
   }
   
   /* Floating column for inputs: 75% width */
@@ -44,6 +82,9 @@ input[type=text], select, textarea{
     float: left;
     width: 75%;
     margin-top: 6px;
+    /* font-size: 18px;
+    font-weight: bold; */
+
   }
   
   /* Clear floats after the columns */
@@ -63,4 +104,7 @@ input[type=text], select, textarea{
   
   #formCol {
     background-color: ;
+  }
+  #isProductForm {
+    background-image: linear-gradient(to left,#b5dae4f8,#e3a2ec);
   }

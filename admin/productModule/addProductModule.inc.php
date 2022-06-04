@@ -6,10 +6,10 @@
 <div class= "container-fluid">
     <div class="row">
             <div class="col-1"></div>
-                <div class="col-10 ">
+                <div class="col-10 mb-4 ">
                     
                     <form method = "POST" action ="addProductFormData.inc.php" enctype ="multipart/form-data">
-                        <div class ="card mt-5 alert alert-primary">
+                        <div class ="card mt-5 shadow mb-4" id="isProductForm">
                            <div class="card-header"> <h3> Add Product Form</div>
                             <div class="card-body">
                                 <div class="row">
@@ -26,8 +26,8 @@
                                     <label>Category Id</label>
                                     </div>
                                     <div class="col-75 form-group">
-                                    <select name = "cate_id" class="form-control atuo-complete">
-                                        <option value = "">Select one</option>
+                                    <select name = "cate_id" class="form-control atuo-complete" id ="isSelect">
+                                        <option value = "" id="isOption">Select one</option>
                                     <?php
                                     
                                     $query = "select * from category_tbl";
@@ -138,11 +138,12 @@
                                         
                                         <input type="number"  name="status" placeholder="Add your Product Price here.." class="form-control">
                                     </div>
-                                </div>
-                                <input type= "submit" name="submit" value = "submit" class ="btn btn-lg mb-4">
+                                   
+                                </div> <input type= "submit" name="submit" value = "submit" class ="btn btn-lg mb-4 text-dark mr-4">
+                               
                                 
                             </div>
-                            <div class="card-footer"></div>
+                            <div class="card-footer mr-1 pt-4">&copy; AddProduct Details Reseved in Rj</div>
                         </div>
                 </form>
             </div>

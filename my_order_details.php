@@ -45,6 +45,10 @@ $order_id = $_GET['order_id'];
                                             <?php 
                                            
                                             $user_id = $_SESSION['USER_ID'];
+                                            echo $sql = " SELECT distinct(`order_details_tbl`.`order_detail_id`),`order_details_tbl`.*,`product_tbl`.`product_name`,`product_tbl`.`file` from `order_details_tbl`,`product_tbl`,`order_tbl` 
+                                            WHERE `order_details_tbl`.`order_id` =  '$order_id' 
+                                            and `order_tbl`.`user_id` = '$user_id' 
+                                            and `product_tbl`.`product_id` = `order_details_tbl`.`product_id` ";
                                              $sql = " SELECT distinct(`order_details_tbl`.`order_detail_id`),`order_details_tbl`.*,`product_tbl`.`product_name`,`product_tbl`.`file` from `order_details_tbl`,`product_tbl`,`order_tbl` 
                                             WHERE `order_details_tbl`.`order_id` =  '$order_id' 
                                             and `order_tbl`.`user_id` = '$user_id' 

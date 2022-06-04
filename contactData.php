@@ -1,7 +1,7 @@
 <?php 
 	 require 'admin/configDb/config.php';
     
-    print_r($_POST);
+    
 		if(isset($_POST['email'])){
 
 			$name = $conn->real_escape_string($_POST['name']);

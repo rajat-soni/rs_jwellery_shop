@@ -8,7 +8,7 @@
 //             $adress = $_POST['address'];
 //             $state = $_POST['state'];
 //             $city = $_POST['city'];
-//             $pin = $_POST['pin'];
+//             $pin = $_POST['pin_code'];
 //             $mobile = $_POST['mobile'];
 //             $payment_type = $_POST['payment_type'];
 //             $total_amount = 0; 
@@ -27,7 +27,7 @@
             //     $order_status = "pedding";
             //     $add_on = date('y-m-d h:i:s');
              
-            //     $sql = " INSERT INTO `order_tbl`(`user_id`, `address`, `state`, `city`, `pin`, `mobile`, `payment_type`, `price`,`payment_status`,`order_status`, `add_on`) 
+            //     $sql = " INSERT INTO `order_tbl`(`user_id`, `address`, `state`, `city`, `pin_code`, `mobile`, `payment_type`, `price`,`payment_status`,`order_status`, `add_on`) 
             //     VALUES ('$user_id','$adress','$state', '$city','$pin','$mobile','$payment_type','$total_price', '$payment_status', '$order_status' ,'$add_on')";
             //     $exSql = $conn->query($sql) or die("error in sql");
         

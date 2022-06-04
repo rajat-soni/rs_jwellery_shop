@@ -12,7 +12,7 @@ include '../configDb/config.php';
         while($result = $runQry->fetch_assoc()){
             $row = $result;
         ?>
-<div class="container mt-4 " id="wraperDiv">
+<div class="container-fluid mt-4 " id="">
     <form action="editCateData.inc.php" method="POST"> 
         <div class="row mt-4 p-2">
             <div class="col-25 ">
