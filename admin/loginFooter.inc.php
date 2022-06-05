@@ -8,10 +8,11 @@
   integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
   crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  
-  <!-- Menu Toggle Script -->
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
  
   <script src = "assest/customjs/adminLogin.js"></script>
+  <script src = "assest/customjs/isForgetPass.js"></script>
 
 
   

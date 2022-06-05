@@ -1,4 +1,11 @@
-<?php include 'indexHeader.inc.php';?>
+<?php include 'indexHeader.inc.php';
+if(!isset($_SESSION['USER_LOGIN'])){?>
+    <script>
+        window.location.href = 'login.inc.php';
+    </script>
+  <?php }
+  ?>
+?>
 <div class="wishlist-area ptb--100 bg__white">
             <div class="container">
                 <div class="row">

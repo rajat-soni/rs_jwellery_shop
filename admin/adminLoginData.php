@@ -1,14 +1,14 @@
 <?php 
 	include 'configDb/config.php';
       session_start();
-		if(isset($_POST['username'])){
+		if(isset($_POST['user_email'])){
 
-			$username = $conn->real_escape_string($_POST['username']);
+			$user_email = $conn->real_escape_string($_POST['user_email']);
 			$password = $conn->real_escape_string($_POST['password']);
             $msg = '';
-			if($username != '' && $password != ''){
+			if($user_email != '' && $password != ''){
 
-			     $sql = " SELECT * FROM `admin_users_tbl` WHERE `user_name` = '$username' and `password` = '$password' ";
+			     $sql = " SELECT * FROM `admin_users_tbl` WHERE `user_email` = '$user_email' and `password` = '$password' ";
 				$mysql = $conn->query($sql);
 				$count = $mysql->num_rows > 0;
 				if($count == 1){
@@ -20,7 +20,7 @@
                         $session_id = session_id();
                         $_SESSION['auth_id'] = $session_id;
                         $_SESSION['ADMIN_ID'] = $row['admin_id'];
-                        $_SESSION['ADMIN_USER'] = $row['user_name'];
+                        $_SESSION['ADMIN_EMAIL'] = $row['user_email'];
 						$_SESSION['ADMIN_LOGIN'] = 'yes';
                         
 						echo 1;

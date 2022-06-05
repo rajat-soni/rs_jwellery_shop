@@ -1,5 +1,10 @@
-<?php require 'indexHeader.inc.php';?>
-
+<?php require 'indexHeader.inc.php';
+if(!isset($_SESSION['USER_LOGIN'])){?>
+    <script>
+        window.location.href = 'login.inc.php';
+    </script>
+  <?php }
+  ?>
 
 <div class="body__overlay"></div>
         <!-- Start Offset Wrapper -->

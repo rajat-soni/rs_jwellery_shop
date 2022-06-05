@@ -3,7 +3,7 @@
     include '../layoutModule/indexHeader.inc.php';
     include '../configDb/config.php';
     
-    //include '../function.inc/function.inc.php';
+    // include '../function.inc/function.inc.php';
     
     if(isset($_GET['type'])){  // active and deactive functionality //
         

@@ -1,9 +1,10 @@
 <?php require 'indexHeader.inc.php';
-if(isset($_SESSION['USER_LOGIN']) && $_SESSION['USER_LOGIN'] == 'yes'){?>
+// session_start();
+if(isset($_SESSION['USER_LOGIN']) == 'yes'){?>
   <script>
-	  window.location.href = 'my_order.inc.php';
+	  window.location.href = 'index.inc.php';
   </script>
-<?php }
+<?php } 
 ?>
 <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(../admin/productModule/image/loginImg.jpg) no-repeat scroll center center / cover ;">
             <div class="ht__bradcaump__wrap">

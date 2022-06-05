@@ -1,6 +1,7 @@
 <?php 
+ session_start();
 	 require 'admin/configDb/config.php';
-	  session_start();
+	 
      	
 			$email = $_POST['email'];
 			$password = $_POST['password'];

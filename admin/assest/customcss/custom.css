@@ -137,7 +137,7 @@ input[type=date] {
 .card-footer{
   padding: 22px;
 }
-#page-content-wrapper , .navbar, .btn {
+#page-content-wrapper , .navbar{
   background-image: linear-gradient(to left,#b5dae4f8,#e3a2ec);
 }
 #status {
@@ -153,6 +153,38 @@ input[type=date] {
   font-size : 21px;
  
 }
+[type=submit]:hover {
+  background-image: linear-gradient(to left,#44f379f8,#ece7ec);
+  border-radius: 0%;
+}
+#isSubmit {
+  padding-left: 44px;
+  padding-right: 44px;
+
+}
+#isBtn{
+
+  padding-left: 15px;
+  padding-right: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size : 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-right: 5px;
+  
+  
+}
+#isForgetForm {
+  border-radius: 0%;
+}
+
+#isErorr{
+  color : red;
+  font-weight: bolder;
+}
+  
 /* .table , thead , tr>td{
   border: 2px solid black ;
 } */

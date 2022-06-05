@@ -1,6 +1,6 @@
 <?php 
 	include '../configDb/config.php';
-    include '../function.inc/function.inc.php';
+    // include '../function.inc/function.inc.php';
 		if(isset($_POST['cate_name'])){
 
 			$catename = $conn->real_escape_string($_POST['cate_name']);

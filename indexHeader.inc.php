@@ -1,8 +1,8 @@
 <?php require 'admin/configDb/config.php';
     require 'function.inc.php';
-    require 'add_to_card.inc.php';
-    // session_start();
-    //error_reporting(0);
+ require 'add_to_card.inc.php';
+  
+ 
 $row = array();
 $cateSql = " SELECT * from `category_tbl` where `status`= 1 order by `cate_name` desc ";
 $exCate = $conn->query($cateSql) or die('Error in Sql table');
