@@ -41,14 +41,14 @@ function getProductData($conn, $limit ='', $id ='') {
     return $res;
     
 }
-function getProductCate($conn, $cate_id ='',$limit = '') {
+function getProductCate($conn, $cate_id ='',$limit = '', $type) {
    
-$getProductSql = " SELECT * FROM `product_tbl` where `status` = 1 ";
+echo $getProductSql = " SELECT * FROM `product_tbl` where `status` = 1 ";
    $res = array();
    
-//     if($type == 'latest'){
-//   $getProductSql .= " order by `product_id` desc ";
-//     }
+    if($type == 'latest'){
+  $getProductSql .= " order by `product_id` desc ";
+    }
    
    if($cate_id != ""){
        $getProductSql .= " and `cate_id` = $cate_id ";
@@ -59,7 +59,7 @@ $getProductSql = " SELECT * FROM `product_tbl` where `status` = 1 ";
    $exeProductSql = $conn->query($getProductSql) or die("Error in Sql"); 
    while($result = $exeProductSql->fetch_array()){
        $res[]= $result;
-       
+   
        
    }  
    return $res;

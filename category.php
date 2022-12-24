@@ -1,14 +1,37 @@
 <?php require 'indexHeader.inc.php';
 //print_r($_GET);
 $cate_id = $_GET['cate_id'];
+
+if(isset($_GET['sort'])){
+    $sort = $conn->real_escape_string($_GET['sort']);
+
+
+    if($sort == 'high_price'){
+     $sort = "order by `product_price` desc";
+    }
+
+    if($sort == 'low_price'){
+        $sort = "order by `product__price` asc";
+    }
+    if($sort == 'new'){
+        $sort = "order by `product_id` desc";
+    }
+    if($sort == 'old'){
+        $sort = "order by `product_id` asc";
+    }
+
+}
+
+
 if($cate_id > 0){
-$getProduct = getProductCate($conn,$cate_id,3);
+$getProduct = getProductCate($conn,$cate_id,3,"");
 }else{ ?>
    <script> 
         window.location.href = 'index.inc.php';
    </script> 
    <?php
 }
+
 // ?>
 
 <div class="body__overlay"></div>
@@ -107,15 +130,17 @@ $getProduct = getProductCate($conn,$cate_id,3);
         <section class="htc__product__grid bg__white ptb--100">
             <div class="container">
                 <div class="row">
+              
                     <div class="col-lg-12 col-lg-push- col-md-12 col-md-push- col-sm-12 col-xs-12">
                         <div class="htc__product__rightidebar">
                             <div class="htc__grid__top">
                                 <div class="htc__select__option">
-                                    <select class="ht__select">
-                                        <option>Default softing</option>
-                                        <option>Sort by popularity</option>
-                                        <option>Sort by average rating</option>
-                                        <option>Sort by newness</option>
+                                    <select class="ht__select" onchange = "sort_product('<?Php echo $cate_id;?>')" id ="sort_product">
+                                    <option value = "">Default softing</option>
+                                        <option value = "high_price">Sort by low price</option>
+                                        <option value = "low_price">Sort by high price</option>
+                                        <option value = "new">Sort by new</option>
+                                        <option value = "old">Sort by old</option>
                                     </select>
                                 </div>
                                 
@@ -139,7 +164,7 @@ $getProduct = getProductCate($conn,$cate_id,3);
                                             <div class="category">
                                                 <div class="ht__cat__thumb">
                                                     <a href="product.php?procduct_id=<?php echo $list['product_id'];?>">
-                                                        <img src="admin//productModule/image/<?php echo $list['file'];?>" alt="product images">
+                                                        <img src="admin/productModule/image/<?php echo $list['file'];?>" alt="product images">
                                                     </a>
                                                 </div>
                                                 <div class="fr__hover__info">
@@ -154,8 +179,10 @@ $getProduct = getProductCate($conn,$cate_id,3);
                                                 <div class="fr__product__inner">
                                                     <h4><a href="product-details.html">Largest Water Pot</a></h4>
                                                     <ul class="fr__pro__prize">
-                                                        <li class="old__prize">$30.3</li>
-                                                        <li>$25.9</li>
+                                                        <label>price</label>
+                                                        <li class="old__prize">&#8377;&nbsp;<?php echo $list['product_price'];?></li>
+                                                        <label>Selling Price</label>
+                                                        <li>&#8377;&nbsp;<?php echo $list['selling_price'];?></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -653,6 +680,7 @@ $getProduct = getProductCate($conn,$cate_id,3);
                             </div>
                             <!-- End Best Sell Area -->
                         </div>
+                 
                     </div>
                 </div>
             </div>

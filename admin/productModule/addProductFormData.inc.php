@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
     $selling_price = $conn->real_escape_string($_POST["selling_price"]);
     $quantity = $conn->real_escape_string($_POST["quantity"]);
      $file = $_FILES['file'];
-     //print_r($file);
+
     $targetDir = "image/";
     print_r($targetDir);
     $file = basename($_FILES["file"]["name"]);

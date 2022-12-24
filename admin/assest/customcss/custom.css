@@ -1,7 +1,7 @@
 body {font-family : 'Merriweather', serif; }
 
     #grad {
-      background-image: linear-gradient(to left,#b5dae4f8,#e3a2ec);
+      background-image: linear-gradient(to bottom right,#b5dae4f8,#e3a2ec);
  }
  #isCard {
   background-image: linear-gradient(to left,#b5dae4f8,#e3a2ec);

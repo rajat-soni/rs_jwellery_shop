@@ -5,7 +5,7 @@ if(!isset($_SESSION['USER_LOGIN'])){?>
     </script>
   <?php }
   ?>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <div class="body__overlay"></div>
         <!-- Start Offset Wrapper -->
         <div class="offset__wrapper">
@@ -157,24 +157,23 @@ if(!isset($_SESSION['USER_LOGIN'])){?>
                             
                            ?>
                             <div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
-                                <div class="category">
-                                    <div class="ht__cat__thumb">
-                                        
-                                        <a href="Product.inc.php?product_id =<?php echo $list['product_id'];?>">
-                                            <img src="../admin/productModule/image/<?php echo $list['file'];?>" alt="product images">
-                                        </a>
-                                    </div>
-                                    <div class="fr__hover__info">
-                                        
-                                    </div>
-                                    <div class="fr__product__inner">
-                                        <h4><a href="product-details.html">
-                                            <?php echo $list['2'];?></a></h4>
-                                        <ul class="fr__pro__prize">
-                                            <li class="old__prize">Old Prince &nbsp;<?php echo $list["3"];?></li><br>
-                                            <li>New Price &nbsp;<?php echo $list["4"];?></li>
-                                        </ul>
-                                    </div>
+                                <div class="card">
+                                    <a href="Product.inc.php?product_id =<?php echo $list  ['product_id'];?>">
+                                    <img src="admin/productModule/image/<?php echo $list['file'];?>" alt="product images"> </a>
+                                    <div class="card-body">
+                                        <div class="category">
+                                            <div class="ht__cat__thumb"></div>
+                                            <div class="fr__hover__info"></div>
+                                            <div class="fr__product__inner">
+                                                <h4><a href="product-details.html">
+                                                <?php echo $list['2'];?></a></h4>
+                                                <ul class="fr__pro__prize">
+                                                    <li class="old__prize">Old Prince &nbsp;<?php echo $list["3"];?></li><br>
+                                                    <li>New Price &nbsp;<?php echo $list["4"];?></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>          
                                 </div>
                             </div>
                             <?php } ?>
@@ -375,8 +374,9 @@ if(!isset($_SESSION['USER_LOGIN'])){?>
         </section>
         <!-- End Category Area -->
         <!-- Start Product Area -->
-        <section class="ftr__product__area ptb--100">
-            <div class="container">
+        
+        <section class="ftr__product__area"style="margin-top: 400px;">
+            <div class="container mt-5">
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="section__title--2 text-center">

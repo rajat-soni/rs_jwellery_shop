@@ -35,18 +35,21 @@
         <section class="htc__product__grid bg__white ptb--100">
             <div class="container">
                 <div class="row">
+                <?php if(count($getProduct)>0); {?>
                     <div class="col-lg-12 col-lg-push- col-md-12 col-md-push- col-sm-12 col-xs-12">
                         <div class="htc__product__rightidebar">
                             <div class="htc__grid__top">
                                 <div class="htc__select__option">
                                     <select class="ht__select">
-                                        <option>Default softing</option>
-                                        <option>Sort by popularity</option>
-                                        <option>Sort by average rating</option>
-                                        <option>Sort by newness</option>
+                                        <option value = "">Default softing</option>
+                                        <option value = "low price">Sort by low price</option>
+                                        <option value = "high price">Sort by high price</option>
+                                        <option value = "poularity">Sort by popularity</option>
+                                        <option value = "rating">Sort by average rating</option>
+                                        <option value = "newest">Sort by newness</option>
                                     </select>
                                 </div>
-                                
+                                <?php }?>
                                 <!-- Start List And Grid View -->
                                 <ul class="view__mode" role="tablist">
                                     <li role="presentation" class="grid-view active"><a href="#grid-view" role="tab" data-toggle="tab"><i class="zmdi zmdi-grid"></i></a></li>
@@ -66,7 +69,7 @@
                                             <div class="category">
                                                 <div class="ht__cat__thumb">
                                                     <a href="product-details.html">
-                                                        <img src="../admin/productModule/image/<?php echo $getProduct['0']['file'];?>" alt="product images">
+                                                        <img src="admin/productModule/image/<?php echo $getProduct['0']['file'];?>" alt="product images">
                                                     </a>
                                                 </div> 
                                                 <div class="fr__hover__info">
@@ -119,7 +122,7 @@
                                                 <div class="ht__list__product">
                                                     <div class="ht__list__thumb">
                                                     <a href="product-details.html">
-                                                        <img src="../admin/productModule/image/<?php echo $getProduct['0']['file'];?>" alt="product images">
+                                                        <img src="admin/productModule/image/<?php echo $getProduct['0']['file'];?>" alt="product images">
                                                     </a>
                                                     </div>
                                                     <div class="htc__list__details">

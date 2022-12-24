@@ -7,7 +7,7 @@
         $qty = $_POST['qty'];
         $type = $_POST['type'];
         $obj = new add_to_card();
-    //    print_r($obj->add_product($product_id, $qty));
+        print_r($obj->add_product($product_id, $qty));
 
         if($type == 'add'){
              $obj->add_product($product_id, $qty);

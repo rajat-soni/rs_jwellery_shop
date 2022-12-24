@@ -1,4 +1,6 @@
 <?php require 'indexHeader.inc.php';
+// require 'admin/configDb/config.php';
+
          if(!isset($_SESSION['cart']['0']) && count($_SESSION['cart'] ) == 0){?>
             <script> 
             window.location.href  = 'index.inc.php';
@@ -29,7 +31,7 @@
                     }
                 $order_status = 1;
                 $add_on = date('y-m-d h:i:s');  
-                $txnid = substr(hash('sha512', mt_rand() . microtime()), 0, 20);
+                $txnid = substr(hash('sha256', mt_rand() . microtime()), 0, 20);
                 $sql = " INSERT INTO `order_tbl`(`user_id`, `address`, `state`, `city`, `pin_code`, `mobile`, `payment_type`, `price`,`payment_status`,`order_status`,`txnid`, `add_on`) 
                 VALUES ('$user_id','$adress','$state', '$city','$pin','$mobile','$payment_type','$total_price', '$payment_status', '$order_status' , '$txnid','$add_on')";
                 $exSql = $conn->query($sql) or die("error in sql");
@@ -72,7 +74,7 @@
                             $userArr = $mysql->fetch_assoc(); 
 
                             $formError = 0;
-                           
+                            $txnid = substr(hash('sha256', mt_rand() . microtime()), 0, 20);
                             $posted['txnid']=$txnid;
                             $posted['amount']=$total_amount;
                             $posted['firstname'] = $userArr['name'];
@@ -110,7 +112,7 @@
                             }
 
 
-                            $formHtml ='<form method="post" name="payuForm" id="payuForm" action="'.$action.'"><input type="hidden" name="key" value="'.$MERCHANT_KEY.'" /><input type="hidden" name="hash" value="'.$hash.'"/><input type="hidden" name="txnid" value="'.$posted['txnid'].'" /><input name="amount" type="hidden" value="'.$posted['amount'].'" /><input type="hidden" name="firstname" id="firstname" value="'.$posted['firstname'].'" /><input type="hidden" name="email" id="email" value="'.$posted['email'].'" /><input type="hidden" name="phone" value="'.$posted['phone'].'" /><textarea name="productinfo" style="display:none;">'.$posted['productinfo'].'</textarea><input type="hidden" name="surl" value="http://localhost:3000/payment_complete.php" /><input type="hidden" name="furl" value="http://localhost:3000/payment_fail.php"/><input type="submit" style="display:none;"/></form>';
+                            $formHtml ='<form method="post" name="payuForm" id="payuForm" action="'.$action.'"><input type="hidden" name="key" value="'.$MERCHANT_KEY.'" /><input type="hidden" name="hash" value="'.$hash.'"/><input type="hidden" name="txnid" value="'.$posted['txnid'].'" /><input name="amount" type="hidden" value="'.$posted['amount'].'" /><input type="hidden" name="firstname" id="firstname" value="'.$posted['firstname'].'" /><input type="hidden" name="email" id="email" value="'.$posted['email'].'" /><input type="hidden" name="phone" value="'.$posted['phone'].'" /><textarea name="productinfo" style="display:none;">'.$posted['productinfo'].'</textarea><input type="hidden" name="surl" value="http://localhost:3000/payment_complete.php" /><input type="hidden" name="furl" value="payment_fail.php"/><input type="submit" style="display:none;"/></form>';
                             echo $formHtml;
                             echo '<script>document.getElementById("payuForm").submit();</script>';
                         }else{

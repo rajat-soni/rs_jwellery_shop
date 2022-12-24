@@ -62,10 +62,7 @@ if(isset($_SESSION['USER_LOGIN']) == 'yes'){?>
 						</div> 
                 
 				</div>
-				
-
-
-
+			
 					<div class="col-md-6">
 						<div class="contact-form-wrap mt--60">
 							<div class="col-xs-12">

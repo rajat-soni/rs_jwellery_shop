@@ -5,6 +5,7 @@ class add_to_card {
     function add_product($product_id,$qty) {
      
         $_SESSION['cart'][$product_id]['qty'] = $qty;
+        //print_r($_SESSION['cart'][$product_id]['qty']);
     }
 
     function update_cart($product_id,$qty) {

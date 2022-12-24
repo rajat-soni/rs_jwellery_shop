@@ -1,4 +1,4 @@
-<?php include 'layoutModule/indexHeader.inc.php';?>
+<?php include '../indexHeader.inc.php';?>
 <div class="container-fluid">
     <div class="row mt-2 bg- pt-4 pb-4 pl-4 pr-4">
         <div class="row mt-2 bg- pt-4 pb-4 pl-4 pr-4">
@@ -117,4 +117,4 @@
     </div>   
 </div>
 
-<?php include 'layoutModule/indexFooter.inc.php';
+<?php include '../indexFooter.inc.php';

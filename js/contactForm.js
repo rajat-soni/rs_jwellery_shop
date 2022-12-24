@@ -187,7 +187,12 @@ function checkInLogin(){
     }
 }
 
+function sort_product(cate_id){
 
+    var sort_product_id = $("#sort_product").val();
+    alert(sort_product_id);
+    window.location.href = "http://localhost:3000/category.php?cate_id="+cate_id+"&sort="+sort_product_id;
+}
 
 
 
