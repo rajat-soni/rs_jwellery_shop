@@ -7,7 +7,7 @@ include '../function.inc/function.inc.php';
     if(isset($_POST['email'])){
 
         $name = $_POST['user_name'];
-    print_r($name);
+        print_r($name);
         $mobile = $_POST['mobile'];
         print_r($mobile);
         $email = $_POST['email'];

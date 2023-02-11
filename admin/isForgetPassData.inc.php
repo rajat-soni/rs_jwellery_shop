@@ -1,6 +1,6 @@
 <?php 
-	include 'configDb/config.php';
-    include 'function.inc/function.inc.php';
+	include 'configDb/config.php'; // connection //
+    include 'function.inc/function.inc.php'; // mailer file //
     
 
 		if(isset($_POST['admin_email'])){
@@ -13,8 +13,8 @@
             if($check = $runQry->num_rows > 0){
                  $data[] = array();
                 $result = $runQry->fetch_assoc();
-                $data= $result['password'];
-                $mail = "Your Recovery Password is: <strong>$data</strong>";  
+                $data= $result['password']; // get password //
+                $mail = "Your Recovery Password is: <strong>$data</strong>";
                 
                 include 'PHPMailerAutoload.php';
                 $mail = new PHPMailer; 

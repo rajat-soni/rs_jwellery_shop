@@ -2,7 +2,7 @@
 
 include '../layoutModule/indexHeader.inc.php'; ?>
 <div class="container-fluid mt-2 " id="">
-    <!-- <form action="/action_page.php"> -->
+    <!-- <form action="/action_page.php">-->
         <div class="row mt-4">
             <div class="col-25 pl-4">
                 <label for="fname">Category Name</label>
