@@ -27,7 +27,7 @@ if(isset($_POST['submit'])){
     $meta_title = $conn->real_escape_string($_POST["meta_title"]);
    $meta_dis = $conn->real_escape_string($_POST['meta_discrip']);
    $meta_key = $conn->real_escape_string($_POST['meta_key']);
-    $status = $_POST["status"];
+   $status = $_POST["status"];
     
      
         $runSql = " INSERT INTO `product_tbl`(`cate_id`, `product_name`, `product_price`, `selling_price`, `quantity`, `file`, `short_disc`, `discrip`, `meta_title`, `meta_discrip`, `meta_key`, `status`) VALUES ('$cate_id','$product_name','$product_mrp','$selling_price','$quantity','$file','$short_disc','$discrip','$meta_title','$meta_dis','$meta_key','$status')";
